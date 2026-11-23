@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LabFerm · Laboratório Multiusuário de Fermentações · IMPG/UFRJ</title>
+<meta name="description" content="Laboratório Multiusuário de Fermentações do Instituto de Microbiologia Paulo de Góes, UFRJ. Alimentos e bebidas fermentados, biogás, enzimas e microbiota.">
+<link rel="icon" href="data:image/svg+xml,&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 200 200&quot;&gt;&lt;circle cx=&quot;94.5&quot; cy=&quot;105.0&quot; r=&quot;5.53&quot; fill=&quot;%23E8735A&quot;/&gt;&lt;circle cx=&quot;100.9&quot; cy=&quot;89.6&quot; r=&quot;5.46&quot; fill=&quot;%23E8735A&quot;/&gt;&lt;circle cx=&quot;107.8&quot; cy=&quot;110.2&quot; r=&quot;5.39&quot; fill=&quot;%23E8735A&quot;/&gt;&lt;circle cx=&quot;85.4&quot; cy=&quot;97.4&quot; r=&quot;5.32&quot; fill=&quot;%23E8735A&quot;/&gt;&lt;circle cx=&quot;114.0&quot; cy=&quot;91.1&quot; r=&quot;5.25&quot; fill=&quot;%23E8735A&quot;/&gt;&lt;circle cx=&quot;95.3&quot; cy=&quot;117.5&quot; r=&quot;5.18&quot; fill=&quot;%23E8735A&quot;/&gt;&lt;circle cx=&quot;91.0&quot; cy=&quot;82.6&quot; r=&quot;5.11&quot; fill=&quot;%23E8735A&quot;/&gt;&lt;circle cx=&quot;119.7&quot; cy=&quot;107.2&quot; r=&quot;5.04&quot; fill=&quot;%23E8735A&quot;/&gt;&lt;circle cx=&quot;79.5&quot; cy=&quot;108.5&quot; r=&quot;4.97&quot; fill=&quot;%23E8735A&quot;/&gt;&lt;circle cx=&quot;109.9&quot; cy=&quot;78.8&quot; r=&quot;4.90&quot; fill=&quot;%232F5D7E&quot;/&gt;&lt;circle cx=&quot;107.3&quot; cy=&quot;123.4&quot; r=&quot;4.83&quot; fill=&quot;%232F5D7E&quot;/&gt;&lt;circle cx=&quot;77.8&quot; cy=&quot;87.1&quot; r=&quot;4.76&quot; fill=&quot;%232F5D7E&quot;/&gt;&lt;circle cx=&quot;126.1&quot; cy=&quot;94.3&quot; r=&quot;4.69&quot; fill=&quot;%232F5D7E&quot;/&gt;&lt;circle cx=&quot;84.1&quot; cy=&quot;122.6&quot; r=&quot;4.62&quot; fill=&quot;%232F5D7E&quot;/&gt;&lt;circle cx=&quot;96.3&quot; cy=&quot;71.6&quot; r=&quot;4.55&quot; fill=&quot;%232F5D7E&quot;/&gt;&lt;circle cx=&quot;122.6&quot; cy=&quot;119.1&quot; r=&quot;4.48&quot; fill=&quot;%232F5D7E&quot;/&gt;&lt;circle cx=&quot;69.5&quot; cy=&quot;101.3&quot; r=&quot;4.41&quot; fill=&quot;%232F5D7E&quot;/&gt;&lt;circle cx=&quot;122.3&quot; cy=&quot;77.9&quot; r=&quot;4.34&quot; fill=&quot;%232F5D7E&quot;/&gt;&lt;circle cx=&quot;98.5&quot; cy=&quot;132.2&quot; r=&quot;4.27&quot; fill=&quot;%232F5D7E&quot;/&gt;&lt;circle cx=&quot;78.8&quot; cy=&quot;74.6&quot; r=&quot;4.20&quot; fill=&quot;%232F5D7E&quot;/&gt;&lt;circle cx=&quot;133.6&quot; cy=&quot;104.5&quot; r=&quot;4.13&quot; fill=&quot;%232F5D7E&quot;/&gt;&lt;circle cx=&quot;71.5&quot; cy=&quot;119.8&quot; r=&quot;4.06&quot; fill=&quot;%232F5D7E&quot;/&gt;&lt;circle cx=&quot;107.8&quot; cy=&quot;65.4&quot; r=&quot;3.99&quot; fill=&quot;%232F5D7E&quot;/&gt;&lt;circle cx=&quot;118.0&quot; cy=&quot;131.5&quot; r=&quot;3.92&quot; fill=&quot;%232F5D7E&quot;/&gt;&lt;circle cx=&quot;64.8&quot; cy=&quot;88.8&quot; r=&quot;3.85&quot; fill=&quot;%232F5D7E&quot;/&gt;&lt;circle cx=&quot;134.3&quot; cy=&quot;84.2&quot; r=&quot;3.78&quot; fill=&quot;%232F5D7E&quot;/&gt;&lt;circle cx=&quot;85.2&quot; cy=&quot;135.5&quot; r=&quot;3.71&quot; fill=&quot;%232F5D7E&quot;/&gt;&lt;circle cx=&quot;86.8&quot; cy=&quot;63.2&quot; r=&quot;3.64&quot; fill=&quot;%232F5D7E&quot;/&gt;&lt;circle cx=&quot;135.3&quot; cy=&quot;118.5&quot; r=&quot;3.57&quot; fill=&quot;%232F5D7E&quot;/&gt;&lt;circle cx=&quot;60.8&quot; cy=&quot;110.3&quot; r=&quot;3.50&quot; fill=&quot;%232F5D7E&quot;/&gt;&lt;circle cx=&quot;122.3&quot; cy=&quot;65.3&quot; r=&quot;3.43&quot; fill=&quot;%232F5D7E&quot;/&gt;&lt;circle cx=&quot;107.1&quot; cy=&quot;141.3&quot; r=&quot;3.36&quot; fill=&quot;%232F5D7E&quot;/&gt;&lt;circle cx=&quot;66.4&quot; cy=&quot;74.0&quot; r=&quot;3.29&quot; fill=&quot;%232F5D7E&quot;/&gt;&lt;circle cx=&quot;143.0&quot; cy=&quot;96.4&quot; r=&quot;3.22&quot; fill=&quot;%232F5D7E&quot;/&gt;&lt;circle cx=&quot;70.3&quot; cy=&quot;132.1&quot; r=&quot;3.15&quot; fill=&quot;%232F5D7E&quot;/&gt;&lt;circle cx=&quot;100.2&quot; cy=&quot;55.6&quot; r=&quot;3.08&quot; fill=&quot;%232F5D7E&quot;/&gt;&lt;circle cx=&quot;130.2&quot; cy=&quot;133.3&quot; r=&quot;3.01&quot; fill=&quot;%232F5D7E&quot;/&gt;&lt;circle cx=&quot;54.6&quot; cy=&quot;95.8&quot; r=&quot;2.94&quot; fill=&quot;%232F5D7E&quot;/&gt;&lt;circle cx=&quot;136.8&quot; cy=&quot;72.1&quot; r=&quot;2.87&quot; fill=&quot;%232F5D7E&quot;/&gt;&lt;circle cx=&quot;91.6&quot; cy=&quot;146.0&quot; r=&quot;2.80&quot; fill=&quot;%232F5D7E&quot;/&gt;&lt;circle cx=&quot;74.8&quot; cy=&quot;59.9&quot; r=&quot;2.73&quot; fill=&quot;%232F5D7E&quot;/&gt;&lt;circle cx=&quot;146.2&quot; cy=&quot;112.7&quot; r=&quot;2.66&quot; fill=&quot;%232F5D7E&quot;/&gt;&lt;circle cx=&quot;56.8&quot; cy=&quot;122.1&quot; r=&quot;2.59&quot; fill=&quot;%232F5D7E&quot;/&gt;&lt;circle cx=&quot;117.1&quot; cy=&quot;54.0&quot; r=&quot;2.52&quot; fill=&quot;%232F5D7E&quot;/&gt;&lt;circle cx=&quot;118.7&quot; cy=&quot;146.0&quot; r=&quot;2.45&quot; fill=&quot;%232F5D7E&quot;/&gt;&lt;circle cx=&quot;54.7&quot; cy=&quot;78.5&quot; r=&quot;2.38&quot; fill=&quot;%232F5D7E&quot;/&gt;&lt;circle cx=&quot;148.5&quot; cy=&quot;85.1&quot; r=&quot;2.31&quot; fill=&quot;%232F5D7E&quot;/&gt;&lt;circle cx=&quot;74.1&quot; cy=&quot;144.2&quot; r=&quot;2.24&quot; fill=&quot;%232F5D7E&quot;/&gt;&lt;circle cx=&quot;89.1&quot; cy=&quot;49.4&quot; r=&quot;2.17&quot; fill=&quot;%232F5D7E&quot;/&gt;&lt;circle cx=&quot;142.7&quot; cy=&quot;130.3&quot; r=&quot;2.10&quot; fill=&quot;%232F5D7E&quot;/&gt;&lt;circle cx=&quot;47.6&quot; cy=&quot;106.5&quot; r=&quot;2.03&quot; fill=&quot;%232F5D7E&quot;/&gt;&lt;circle cx=&quot;134.6&quot; cy=&quot;59.4&quot; r=&quot;1.96&quot; fill=&quot;%232F5D7E&quot;/&gt;&lt;circle cx=&quot;102.0&quot; cy=&quot;153.8&quot; r=&quot;1.89&quot; fill=&quot;%232F5D7E&quot;/&gt;&lt;circle cx=&quot;61.8&quot; cy=&quot;61.3&quot; r=&quot;1.82&quot; fill=&quot;%232F5D7E&quot;/&gt;&lt;circle cx=&quot;154.8&quot; cy=&quot;102.8&quot; r=&quot;1.75&quot; fill=&quot;%232F5D7E&quot;/&gt;&lt;circle cx=&quot;57.3&quot; cy=&quot;135.3&quot; r=&quot;1.68&quot; fill=&quot;%232F5D7E&quot;/&gt;&lt;circle cx=&quot;107.7&quot; cy=&quot;44.7&quot; r=&quot;1.61&quot; fill=&quot;%232F5D7E&quot;/&gt;&lt;circle cx=&quot;131.9&quot; cy=&quot;146.4&quot; r=&quot;1.54&quot; fill=&quot;%232F5D7E&quot;/&gt;&lt;circle cx=&quot;44.6&quot; cy=&quot;87.2&quot; r=&quot;1.47&quot; fill=&quot;%232F5D7E&quot;/&gt;&lt;/svg&gt;">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--teal:#2F5D7E;--honey:#E8735A;--ink:#1D2B3A;--paper:#F1F5F9;--muted:#51606F;--line:#DDE5EC;--radius:14px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"IBM Plex Sans",system-ui,sans-serif;color:var(--ink);background:#fff;line-height:1.6;font-size:17px}
+html[lang="pt-BR"] .en, html[lang="en"] .pt{display:none}
+a{color:var(--teal)} a:hover{color:var(--ink)}
+img,svg{display:block}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+.skip{position:absolute;left:-999px} .skip:focus{left:16px;top:16px;background:#fff;padding:8px 12px;z-index:99}
+header.top{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;gap:20px;min-height:68px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}
+.brand svg{width:40px;height:40px}
+.word{font-size:24px;letter-spacing:-.3px;line-height:1} .word b{font-weight:600} .word span{font-weight:300}
+nav.menu{display:flex;gap:4px;flex-wrap:wrap;margin-left:auto}
+nav.menu a{text-decoration:none;color:var(--ink);font-size:15px;padding:10px 10px;border-radius:8px}
+nav.menu a:hover{background:var(--paper)}
+.tools{display:flex;align-items:center;gap:10px}
+.lang{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.lang button{border:0;background:transparent;font:inherit;font-size:14px;font-weight:500;padding:8px 12px;min-height:40px;cursor:pointer;color:var(--muted)}
+.lang button[aria-pressed="true"]{background:var(--teal);color:#fff}
+.social{display:flex;gap:6px}
+.social a{display:grid;place-items:center;width:40px;height:40px;border-radius:999px;color:var(--teal);border:1px solid var(--line)}
+.social a:hover{background:var(--paper)}
+.social.light a{color:#fff;border-color:rgba(255,255,255,.35)} .social.light a:hover{background:rgba(255,255,255,.1)}
+.hero{background:var(--paper);overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:48px;align-items:center;padding-top:72px;padding-bottom:72px}
+.badge{display:inline-block;font-size:13px;font-weight:600;letter-spacing:.4px;text-transform:uppercase;color:#A33E26;background:#FBE1D9;padding:6px 12px;border-radius:999px}
+h1{font-size:clamp(36px,5vw,58px);line-height:1.08;letter-spacing:-1px;margin:18px 0 18px;font-weight:600}
+h1 span.light{font-weight:300;display:block}
+.lead{font-size:19px;color:var(--muted);max-width:620px;margin:0 0 28px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;min-height:46px;padding:0 20px;border-radius:999px;font-weight:500;text-decoration:none;border:1px solid var(--teal)}
+.btn.solid{background:var(--teal);color:#fff} .btn.solid:hover{background:var(--ink);color:#fff}
+.btn.ghost{color:var(--teal)}
+.hero-art{justify-self:center;width:min(380px,80vw)}
+.hero-art svg{width:100%;height:auto}
+section{padding:88px 0}
+section.alt{background:var(--paper)}
+.kicker{font-size:13px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:#B4472E;margin:0 0 8px}
+h2{font-size:clamp(28px,3.4vw,38px);line-height:1.15;letter-spacing:-.5px;margin:0 0 16px;font-weight:600}
+.intro{color:var(--muted);max-width:760px;margin:0 0 40px}
+.about{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:40px}
+.about p{margin:0 0 16px}
+.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:8px}
+.fact{border:1px solid var(--line);border-radius:var(--radius);padding:18px}
+.fact strong{display:block;font-size:28px;font-weight:600;color:var(--teal);line-height:1.1}
+.fact span{font-size:14px;color:var(--muted)}
+.grid4{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.line{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px;position:relative}
+.line .dot{display:block;width:34px;height:34px;border-radius:50%;background:var(--c);margin-bottom:16px;box-shadow:14px 6px 0 -6px var(--c)}
+.line h3,.member h3,.project h3{margin:0 0 8px;font-size:19px;line-height:1.3;font-weight:600}
+.line p{margin:0 0 12px;font-size:16px;color:var(--muted)}
+.line .who{font-size:14px;color:var(--teal);font-weight:500;margin:0}
+.team{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.member{border:1px solid var(--line);border-radius:var(--radius);padding:24px;display:flex;flex-direction:column}
+.avatar{width:80px;height:80px;border-radius:50%;object-fit:cover;display:grid;place-items:center;font-weight:600;font-size:20px;color:var(--ink);margin-bottom:16px}
+.role{font-size:14px;color:#B4472E;font-weight:500;margin:0 0 10px}
+.focus{font-size:15px;color:var(--muted);margin:0 0 18px;flex-grow:1}
+.links{display:flex;gap:8px;flex-wrap:wrap}
+.chip{display:inline-flex;align-items:center;min-height:40px;padding:0 14px;border-radius:999px;border:1px solid var(--line);font-size:14px;font-weight:500;text-decoration:none;color:var(--teal)}
+.chip.primary{background:var(--teal);border-color:var(--teal);color:#fff} .chip.primary:hover{background:var(--ink);color:#fff}
+.projects{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:20px}
+.project{background:#fff;border-radius:var(--radius);padding:22px 24px;border-top:5px solid var(--c);box-shadow:0 1px 0 var(--line)}
+.project .meta{font-size:13px;color:var(--muted);margin:0 0 6px;font-weight:500}
+.project h3{font-size:17px}
+.project .coord{font-size:14px;color:var(--teal);margin:0}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 24px}
+.filter{font:inherit;font-size:14px;min-height:40px;padding:0 14px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--ink);cursor:pointer}
+.filter.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.count{font-size:15px;color:var(--muted);margin:0 0 16px}
+ol.pubs{list-style:none;padding:0;margin:0;display:grid;gap:14px}
+.pub{border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px}
+.pub .title{font-weight:600;margin:0 0 6px;line-height:1.4}
+.pub .authors{font-size:14px;color:var(--muted);margin:0 0 4px}
+.pub .venue{font-size:15px;margin:0 0 10px}
+.pubfoot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center}
+.doi{font-size:14px;word-break:break-all}
+.pending{font-size:13px;color:#A33E26;background:#FBE1D9;border-radius:999px;padding:3px 10px}
+.tags{display:flex;gap:6px;flex-wrap:wrap}
+.tag{font-size:12px;background:var(--paper);border-radius:999px;padding:3px 10px;color:var(--teal)}
+.note{font-size:14px;color:var(--muted);margin-top:20px}
+.obra{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:40px;align-items:center}
+.video{aspect-ratio:16/9;border-radius:var(--radius);background:var(--ink);overflow:hidden} .video video{width:100%;height:100%;display:block}
+.video svg.bg{position:absolute;inset:-20%;width:140%;height:140%;opacity:.12}
+.video p{position:relative;margin:0;font-size:18px}
+.video small{display:block;opacity:.75;font-size:14px;margin-top:6px}
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.steps li{display:grid;grid-template-columns:28px 1fr;gap:12px;align-items:start}
+.steps .mk{width:28px;height:28px;border-radius:50%;border:2px solid var(--teal);margin-top:2px}
+.steps .mk.done{background:var(--teal)} .steps .mk.now{background:var(--honey);border-color:var(--honey)}
+.steps strong{display:block} .steps span{font-size:15px;color:var(--muted)}
+.where{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:center}
+.addr{font-style:normal;font-size:18px;margin:0 0 20px}
+.mapcard{border-radius:var(--radius);background:var(--paper);border:1px solid var(--line);aspect-ratio:4/3;display:grid;place-items:center;position:relative;overflow:hidden}
+.mapcard svg{width:100%;height:100%}
+footer{background:var(--ink);color:#DCE7EA;padding:56px 0 40px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:32px;justify-content:space-between;align-items:flex-start}
+footer .word{color:#fff} footer a{color:#fff}
+footer p{margin:6px 0;font-size:15px}
+.small{font-size:13px;opacity:.75}
+:focus-visible{outline:3px solid var(--honey);outline-offset:2px}
+@media (max-width:900px){
+ .hero .wrap,.obra,.where{grid-template-columns:1fr}
+ .hero-art{order:-1;width:220px}
+ nav.menu{order:3;width:100%;margin-left:0;overflow-x:auto;flex-wrap:nowrap}
+ .facts{grid-template-columns:1fr 1fr}
+ section{padding:64px 0}
+}
+@media (max-width:560px){
+ .tools .social{display:none}
+ .facts{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#conteudo"><span class="pt">Pular para o conteúdo</span><span class="en">Skip to content</span></a>
+<header class="top">
+<div class="wrap bar">
+<a class="brand" href="#inicio" aria-label="LabFerm">
+<svg viewBox="0 0 200 200" aria-hidden="true"><circle cx="94.5" cy="105.0" r="5.57" fill="#E8735A"/><circle cx="100.9" cy="89.6" r="5.54" fill="#E8735A"/><circle cx="107.8" cy="110.2" r="5.52" fill="#E8735A"/><circle cx="85.4" cy="97.4" r="5.49" fill="#E8735A"/><circle cx="114.0" cy="91.1" r="5.46" fill="#E8735A"/><circle cx="95.3" cy="117.5" r="5.43" fill="#E8735A"/><circle cx="91.0" cy="82.6" r="5.40" fill="#E8735A"/><circle cx="119.7" cy="107.2" r="5.38" fill="#E8735A"/><circle cx="79.5" cy="108.5" r="5.35" fill="#E8735A"/><circle cx="109.9" cy="78.8" r="5.32" fill="#2F5D7E"/><circle cx="107.3" cy="123.4" r="5.29" fill="#2F5D7E"/><circle cx="77.8" cy="87.1" r="5.26" fill="#2F5D7E"/><circle cx="126.1" cy="94.3" r="5.24" fill="#2F5D7E"/><circle cx="84.1" cy="122.6" r="5.21" fill="#2F5D7E"/><circle cx="96.3" cy="71.6" r="5.18" fill="#2F5D7E"/><circle cx="122.6" cy="119.1" r="5.15" fill="#2F5D7E"/><circle cx="69.5" cy="101.3" r="5.12" fill="#2F5D7E"/><circle cx="122.3" cy="77.9" r="5.10" fill="#2F5D7E"/><circle cx="98.5" cy="132.2" r="5.07" fill="#2F5D7E"/><circle cx="78.8" cy="74.6" r="5.04" fill="#2F5D7E"/><circle cx="133.6" cy="104.5" r="5.01" fill="#2F5D7E"/><circle cx="71.5" cy="119.8" r="4.98" fill="#2F5D7E"/><circle cx="107.8" cy="65.4" r="4.96" fill="#2F5D7E"/><circle cx="118.0" cy="131.5" r="4.93" fill="#2F5D7E"/><circle cx="64.8" cy="88.8" r="4.90" fill="#2F5D7E"/><circle cx="134.3" cy="84.2" r="4.87" fill="#2F5D7E"/><circle cx="85.2" cy="135.5" r="4.84" fill="#2F5D7E"/><circle cx="86.8" cy="63.2" r="4.82" fill="#2F5D7E"/><circle cx="135.3" cy="118.5" r="4.79" fill="#2F5D7E"/><circle cx="60.8" cy="110.3" r="4.76" fill="#2F5D7E"/><circle cx="122.3" cy="65.3" r="4.73" fill="#2F5D7E"/><circle cx="107.1" cy="141.3" r="4.70" fill="#2F5D7E"/><circle cx="66.4" cy="74.0" r="4.68" fill="#2F5D7E"/><circle cx="143.0" cy="96.4" r="4.65" fill="#2F5D7E"/><circle cx="70.3" cy="132.1" r="4.62" fill="#2F5D7E"/><circle cx="100.2" cy="55.6" r="4.59" fill="#2F5D7E"/><circle cx="130.2" cy="133.3" r="4.56" fill="#2F5D7E"/><circle cx="54.6" cy="95.8" r="4.54" fill="#2F5D7E"/><circle cx="136.8" cy="72.1" r="4.51" fill="#2F5D7E"/><circle cx="91.6" cy="146.0" r="4.48" fill="#2F5D7E"/><circle cx="74.8" cy="59.9" r="4.45" fill="#2F5D7E"/><circle cx="146.2" cy="112.7" r="4.42" fill="#2F5D7E"/><circle cx="56.8" cy="122.1" r="4.40" fill="#2F5D7E"/><circle cx="117.1" cy="54.0" r="4.37" fill="#2F5D7E"/><circle cx="118.7" cy="146.0" r="4.34" fill="#2F5D7E"/><circle cx="54.7" cy="78.5" r="4.31" fill="#2F5D7E"/><circle cx="148.5" cy="85.1" r="4.28" fill="#2F5D7E"/><circle cx="74.1" cy="144.2" r="4.26" fill="#2F5D7E"/><circle cx="89.1" cy="49.4" r="4.23" fill="#2F5D7E"/><circle cx="142.7" cy="130.3" r="4.20" fill="#2F5D7E"/><circle cx="47.6" cy="106.5" r="4.17" fill="#2F5D7E"/><circle cx="134.6" cy="59.4" r="4.14" fill="#2F5D7E"/><circle cx="102.0" cy="153.8" r="4.12" fill="#2F5D7E"/><circle cx="61.8" cy="61.3" r="4.09" fill="#2F5D7E"/><circle cx="154.8" cy="102.8" r="4.06" fill="#2F5D7E"/><circle cx="57.3" cy="135.3" r="4.03" fill="#2F5D7E"/><circle cx="107.7" cy="44.7" r="4.00" fill="#2F5D7E"/><circle cx="131.9" cy="146.4" r="3.98" fill="#2F5D7E"/><circle cx="44.6" cy="87.2" r="3.95" fill="#2F5D7E"/><circle cx="149.9" cy="71.8" r="3.92" fill="#2F5D7E"/><circle cx="82.2" cy="155.0" r="3.89" fill="#2F5D7E"/><circle cx="75.8" cy="47.0" r="3.86" fill="#2F5D7E"/><circle cx="154.1" cy="123.0" r="3.84" fill="#2F5D7E"/><circle cx="44.2" cy="119.7" r="3.81" fill="#2F5D7E"/><circle cx="128.0" cy="47.3" r="3.78" fill="#2F5D7E"/><circle cx="115.0" cy="158.2" r="3.75" fill="#2F5D7E"/><circle cx="49.2" cy="67.0" r="3.72" fill="#2F5D7E"/><circle cx="160.2" cy="90.0" r="3.70" fill="#2F5D7E"/><circle cx="62.1" cy="148.4" r="3.67" fill="#2F5D7E"/><circle cx="95.2" cy="38.3" r="3.64" fill="#2F5D7E"/><circle cx="145.6" cy="142.6" r="3.61" fill="#2F5D7E"/><circle cx="37.2" cy="99.4" r="3.58" fill="#2F5D7E"/><circle cx="147.0" cy="57.8" r="3.56" fill="#2F5D7E"/><circle cx="93.8" cy="163.4" r="3.53" fill="#2F5D7E"/><circle cx="61.5" cy="48.8" r="3.50" fill="#2F5D7E"/><circle cx="163.4" cy="111.9" r="3.47" fill="#2F5D7E"/><circle cx="44.9" cy="134.3" r="3.44" fill="#2F5D7E"/><circle cx="117.6" cy="37.1" r="3.42" fill="#2F5D7E"/><circle cx="129.7" cy="158.7" r="3.39" fill="#2F5D7E"/><circle cx="38.1" cy="76.7" r="3.36" fill="#2F5D7E"/><circle cx="161.8" cy="75.2" r="3.33" fill="#2F5D7E"/><circle cx="71.0" cy="160.4" r="3.30" fill="#2F5D7E"/><circle cx="80.5" cy="35.5" r="3.28" fill="#2F5D7E"/><circle cx="158.3" cy="134.6" r="3.25" fill="#2F5D7E"/><circle cx="33.2" cy="114.0" r="3.22" fill="#2F5D7E"/><circle cx="140.0" cy="44.3" r="3.19" fill="#2F5D7E"/><circle cx="108.2" cy="168.5" r="3.16" fill="#2F5D7E"/><circle cx="47.4" cy="54.7" r="3.14" fill="#2F5D7E"/><circle cx="169.8" cy="97.8" r="3.11" fill="#2F5D7E"/><circle cx="49.7" cy="149.0" r="3.08" fill="#2F5D7E"/><circle cx="104.0" cy="29.5" r="3.05" fill="#2F5D7E"/><circle cx="144.9" cy="155.0" r="3.02" fill="#2F5D7E"/><circle cx="29.4" cy="89.8" r="3.00" fill="#2F5D7E"/><circle cx="159.3" cy="59.6" r="2.97" fill="#2F5D7E"/><circle cx="83.5" cy="170.2" r="2.94" fill="#2F5D7E"/><circle cx="64.6" cy="36.7" r="2.91" fill="#2F5D7E"/><circle cx="169.2" cy="122.9" r="2.88" fill="#2F5D7E"/><circle cx="33.2" cy="130.0" r="2.86" fill="#2F5D7E"/><circle cx="129.1" cy="32.4" r="2.83" fill="#2F5D7E"/><circle cx="124.3" cy="169.9" r="2.80" fill="#2F5D7E"/><circle cx="34.5" cy="64.7" r="2.77" fill="#2F5D7E"/><circle cx="172.5" cy="81.7" r="2.74" fill="#2F5D7E"/><circle cx="58.7" cy="162.8" r="2.72" fill="#2F5D7E"/><circle cx="88.0" cy="25.5" r="2.69" fill="#2F5D7E"/><circle cx="159.5" cy="147.0" r="2.66" fill="#2F5D7E"/><circle cx="24.0" cy="105.5" r="2.63" fill="#2F5D7E"/><circle cx="152.6" cy="44.3" r="2.60" fill="#2F5D7E"/><circle cx="98.8" cy="176.9" r="2.58" fill="#2F5D7E"/><circle cx="48.7" cy="42.3" r="2.55" fill="#2F5D7E"/><circle cx="177.2" cy="108.0" r="2.52" fill="#2F5D7E"/><circle cx="37.4" cy="146.5" r="2.49" fill="#2F5D7E"/><circle cx="114.8" cy="23.1" r="2.46" fill="#2F5D7E"/><circle cx="141.2" cy="167.0" r="2.44" fill="#2F5D7E"/><circle cx="24.0" cy="78.3" r="2.41" fill="#2F5D7E"/><circle cx="171.0" cy="64.5" r="2.38" fill="#2F5D7E"/><circle cx="71.5" cy="174.4" r="2.35" fill="#2F5D7E"/><circle cx="70.6" cy="25.6" r="2.32" fill="#2F5D7E"/><circle cx="172.3" cy="135.2" r="2.30" fill="#2F5D7E"/><circle cx="22.6" cy="123.0" r="2.27" fill="#2F5D7E"/><circle cx="141.7" cy="30.5" r="2.24" fill="#2F5D7E"/><circle cx="116.3" cy="179.8" r="2.21" fill="#2F5D7E"/><circle cx="33.9" cy="52.0" r="2.18" fill="#2F5D7E"/><circle cx="181.5" cy="90.7" r="2.16" fill="#2F5D7E"/><circle cx="45.9" cy="162.2" r="2.13" fill="#2F5D7E"/><circle cx="97.8" cy="17.3" r="2.10" fill="#2F5D7E"/><circle cx="157.7" cy="159.8" r="2.07" fill="#2F5D7E"/><circle cx="16.8" cy="94.9" r="2.04" fill="#2F5D7E"/><circle cx="165.1" cy="47.3" r="2.02" fill="#2F5D7E"/><circle cx="87.5" cy="183.1" r="1.99" fill="#2F5D7E"/><circle cx="52.9" cy="30.0" r="1.96" fill="#2F5D7E"/><circle cx="182.3" cy="119.8" r="1.93" fill="#2F5D7E"/><circle cx="25.6" cy="141.1" r="1.90" fill="#2F5D7E"/><circle cx="127.2" cy="19.1" r="1.88" fill="#2F5D7E"/><circle cx="134.7" cy="178.3" r="1.85" fill="#2F5D7E"/><circle cx="21.2" cy="65.6" r="1.82" fill="#2F5D7E"/><circle cx="181.6" cy="72.0" r="1.79" fill="#2F5D7E"/><circle cx="58.5" cy="176.0" r="1.76" fill="#2F5D7E"/><circle cx="79.1" cy="15.6" r="1.74" fill="#2F5D7E"/><circle cx="172.7" cy="148.3" r="1.71" fill="#2F5D7E"/><circle cx="13.5" cy="113.5" r="1.68" fill="#2F5D7E"/><circle cx="154.9" cy="31.4" r="1.65" fill="#2F5D7E"/><circle cx="105.9" cy="188.0" r="1.62" fill="#2F5D7E"/><circle cx="36.0" cy="38.9" r="1.60" fill="#2F5D7E"/><circle cx="188.8" cy="101.8" r="1.57" fill="#2F5D7E"/><circle cx="33.1" cy="158.9" r="1.54" fill="#2F5D7E"/><circle cx="109.6" cy="11.1" r="1.51" fill="#2F5D7E"/><circle cx="153.1" cy="172.3" r="1.48" fill="#2F5D7E"/><circle cx="11.7" cy="82.5" r="1.46" fill="#2F5D7E"/><circle cx="177.2" cy="53.1" r="1.43" fill="#2F5D7E"/></svg>
+<span class="word"><span>Lab</span><b>Ferm</b></span>
+</a>
+<nav class="menu" aria-label="Seções">
+<a href="#sobre"><span class="pt">Sobre</span><span class="en">About</span></a>
+<a href="#linhas"><span class="pt">Pesquisa</span><span class="en">Research</span></a>
+<a href="#equipe"><span class="pt">Equipe</span><span class="en">Team</span></a>
+<a href="#projetos"><span class="pt">Projetos</span><span class="en">Projects</span></a>
+<a href="#publicacoes"><span class="pt">Publicações</span><span class="en">Publications</span></a>
+<a href="#obra"><span class="pt">A obra</span><span class="en">Construction</span></a>
+<a href="#onde"><span class="pt">Onde estamos</span><span class="en">Location</span></a>
+</nav>
+<div class="tools">
+<div class="lang" role="group" aria-label="Idioma / Language">
+<button type="button" data-lang="pt-BR" aria-pressed="true">PT</button>
+<button type="button" data-lang="en" aria-pressed="false">EN</button>
+</div>
+<div class="social ">
+<a data-social="instagram" href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.3" cy="6.7" r="1.2" fill="currentColor"/></svg></a>
+<a data-social="linkedin" href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M7.5 10v6.5M7.5 7.3v.1M11 16.5V10m0 3c0-1.8 1-3 2.6-3 1.5 0 2.4 1 2.4 2.9v3.6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></a>
+<a data-social="email" href="#" aria-label="E-mail"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M4 7l8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></a>
+</div>
+</div>
+</div>
+</header>
+
+<main id="conteudo">
+<section class="hero" id="inicio" style="padding:0">
+<div class="wrap">
+<div>
+<span class="badge"><span class="pt">Em implantação</span><span class="en">Under construction</span></span>
+<h1><span class="light"><span class="pt">Laboratório Multiusuário de</span><span class="en">Multiuser Laboratory of</span></span><span class="pt">Fermentações</span><span class="en">Fermentation</span></h1>
+<p class="lead"><span class="pt">Instituto de Microbiologia Paulo de Góes · UFRJ</span><span class="en">Paulo de Góes Institute of Microbiology · UFRJ</span></p>
+<div class="cta">
+<a class="btn solid" href="#linhas"><span class="pt">Conheça a pesquisa</span><span class="en">Explore our research</span></a>
+<a class="btn ghost" href="#obra"><span class="pt">Acompanhe a obra</span><span class="en">Follow the construction</span></a>
+</div>
+</div>
+<div class="hero-art"><svg viewBox="0 0 200 200" role="img" aria-label="LabFerm"><circle cx="94.5" cy="105.0" r="5.57" fill="#E8735A"/><circle cx="100.9" cy="89.6" r="5.54" fill="#E8735A"/><circle cx="107.8" cy="110.2" r="5.52" fill="#E8735A"/><circle cx="85.4" cy="97.4" r="5.49" fill="#E8735A"/><circle cx="114.0" cy="91.1" r="5.46" fill="#E8735A"/><circle cx="95.3" cy="117.5" r="5.43" fill="#E8735A"/><circle cx="91.0" cy="82.6" r="5.40" fill="#E8735A"/><circle cx="119.7" cy="107.2" r="5.38" fill="#E8735A"/><circle cx="79.5" cy="108.5" r="5.35" fill="#E8735A"/><circle cx="109.9" cy="78.8" r="5.32" fill="#2F5D7E"/><circle cx="107.3" cy="123.4" r="5.29" fill="#2F5D7E"/><circle cx="77.8" cy="87.1" r="5.26" fill="#2F5D7E"/><circle cx="126.1" cy="94.3" r="5.24" fill="#2F5D7E"/><circle cx="84.1" cy="122.6" r="5.21" fill="#2F5D7E"/><circle cx="96.3" cy="71.6" r="5.18" fill="#2F5D7E"/><circle cx="122.6" cy="119.1" r="5.15" fill="#2F5D7E"/><circle cx="69.5" cy="101.3" r="5.12" fill="#2F5D7E"/><circle cx="122.3" cy="77.9" r="5.10" fill="#2F5D7E"/><circle cx="98.5" cy="132.2" r="5.07" fill="#2F5D7E"/><circle cx="78.8" cy="74.6" r="5.04" fill="#2F5D7E"/><circle cx="133.6" cy="104.5" r="5.01" fill="#2F5D7E"/><circle cx="71.5" cy="119.8" r="4.98" fill="#2F5D7E"/><circle cx="107.8" cy="65.4" r="4.96" fill="#2F5D7E"/><circle cx="118.0" cy="131.5" r="4.93" fill="#2F5D7E"/><circle cx="64.8" cy="88.8" r="4.90" fill="#2F5D7E"/><circle cx="134.3" cy="84.2" r="4.87" fill="#2F5D7E"/><circle cx="85.2" cy="135.5" r="4.84" fill="#2F5D7E"/><circle cx="86.8" cy="63.2" r="4.82" fill="#2F5D7E"/><circle cx="135.3" cy="118.5" r="4.79" fill="#2F5D7E"/><circle cx="60.8" cy="110.3" r="4.76" fill="#2F5D7E"/><circle cx="122.3" cy="65.3" r="4.73" fill="#2F5D7E"/><circle cx="107.1" cy="141.3" r="4.70" fill="#2F5D7E"/><circle cx="66.4" cy="74.0" r="4.68" fill="#2F5D7E"/><circle cx="143.0" cy="96.4" r="4.65" fill="#2F5D7E"/><circle cx="70.3" cy="132.1" r="4.62" fill="#2F5D7E"/><circle cx="100.2" cy="55.6" r="4.59" fill="#2F5D7E"/><circle cx="130.2" cy="133.3" r="4.56" fill="#2F5D7E"/><circle cx="54.6" cy="95.8" r="4.54" fill="#2F5D7E"/><circle cx="136.8" cy="72.1" r="4.51" fill="#2F5D7E"/><circle cx="91.6" cy="146.0" r="4.48" fill="#2F5D7E"/><circle cx="74.8" cy="59.9" r="4.45" fill="#2F5D7E"/><circle cx="146.2" cy="112.7" r="4.42" fill="#2F5D7E"/><circle cx="56.8" cy="122.1" r="4.40" fill="#2F5D7E"/><circle cx="117.1" cy="54.0" r="4.37" fill="#2F5D7E"/><circle cx="118.7" cy="146.0" r="4.34" fill="#2F5D7E"/><circle cx="54.7" cy="78.5" r="4.31" fill="#2F5D7E"/><circle cx="148.5" cy="85.1" r="4.28" fill="#2F5D7E"/><circle cx="74.1" cy="144.2" r="4.26" fill="#2F5D7E"/><circle cx="89.1" cy="49.4" r="4.23" fill="#2F5D7E"/><circle cx="142.7" cy="130.3" r="4.20" fill="#2F5D7E"/><circle cx="47.6" cy="106.5" r="4.17" fill="#2F5D7E"/><circle cx="134.6" cy="59.4" r="4.14" fill="#2F5D7E"/><circle cx="102.0" cy="153.8" r="4.12" fill="#2F5D7E"/><circle cx="61.8" cy="61.3" r="4.09" fill="#2F5D7E"/><circle cx="154.8" cy="102.8" r="4.06" fill="#2F5D7E"/><circle cx="57.3" cy="135.3" r="4.03" fill="#2F5D7E"/><circle cx="107.7" cy="44.7" r="4.00" fill="#2F5D7E"/><circle cx="131.9" cy="146.4" r="3.98" fill="#2F5D7E"/><circle cx="44.6" cy="87.2" r="3.95" fill="#2F5D7E"/><circle cx="149.9" cy="71.8" r="3.92" fill="#2F5D7E"/><circle cx="82.2" cy="155.0" r="3.89" fill="#2F5D7E"/><circle cx="75.8" cy="47.0" r="3.86" fill="#2F5D7E"/><circle cx="154.1" cy="123.0" r="3.84" fill="#2F5D7E"/><circle cx="44.2" cy="119.7" r="3.81" fill="#2F5D7E"/><circle cx="128.0" cy="47.3" r="3.78" fill="#2F5D7E"/><circle cx="115.0" cy="158.2" r="3.75" fill="#2F5D7E"/><circle cx="49.2" cy="67.0" r="3.72" fill="#2F5D7E"/><circle cx="160.2" cy="90.0" r="3.70" fill="#2F5D7E"/><circle cx="62.1" cy="148.4" r="3.67" fill="#2F5D7E"/><circle cx="95.2" cy="38.3" r="3.64" fill="#2F5D7E"/><circle cx="145.6" cy="142.6" r="3.61" fill="#2F5D7E"/><circle cx="37.2" cy="99.4" r="3.58" fill="#2F5D7E"/><circle cx="147.0" cy="57.8" r="3.56" fill="#2F5D7E"/><circle cx="93.8" cy="163.4" r="3.53" fill="#2F5D7E"/><circle cx="61.5" cy="48.8" r="3.50" fill="#2F5D7E"/><circle cx="163.4" cy="111.9" r="3.47" fill="#2F5D7E"/><circle cx="44.9" cy="134.3" r="3.44" fill="#2F5D7E"/><circle cx="117.6" cy="37.1" r="3.42" fill="#2F5D7E"/><circle cx="129.7" cy="158.7" r="3.39" fill="#2F5D7E"/><circle cx="38.1" cy="76.7" r="3.36" fill="#2F5D7E"/><circle cx="161.8" cy="75.2" r="3.33" fill="#2F5D7E"/><circle cx="71.0" cy="160.4" r="3.30" fill="#2F5D7E"/><circle cx="80.5" cy="35.5" r="3.28" fill="#2F5D7E"/><circle cx="158.3" cy="134.6" r="3.25" fill="#2F5D7E"/><circle cx="33.2" cy="114.0" r="3.22" fill="#2F5D7E"/><circle cx="140.0" cy="44.3" r="3.19" fill="#2F5D7E"/><circle cx="108.2" cy="168.5" r="3.16" fill="#2F5D7E"/><circle cx="47.4" cy="54.7" r="3.14" fill="#2F5D7E"/><circle cx="169.8" cy="97.8" r="3.11" fill="#2F5D7E"/><circle cx="49.7" cy="149.0" r="3.08" fill="#2F5D7E"/><circle cx="104.0" cy="29.5" r="3.05" fill="#2F5D7E"/><circle cx="144.9" cy="155.0" r="3.02" fill="#2F5D7E"/><circle cx="29.4" cy="89.8" r="3.00" fill="#2F5D7E"/><circle cx="159.3" cy="59.6" r="2.97" fill="#2F5D7E"/><circle cx="83.5" cy="170.2" r="2.94" fill="#2F5D7E"/><circle cx="64.6" cy="36.7" r="2.91" fill="#2F5D7E"/><circle cx="169.2" cy="122.9" r="2.88" fill="#2F5D7E"/><circle cx="33.2" cy="130.0" r="2.86" fill="#2F5D7E"/><circle cx="129.1" cy="32.4" r="2.83" fill="#2F5D7E"/><circle cx="124.3" cy="169.9" r="2.80" fill="#2F5D7E"/><circle cx="34.5" cy="64.7" r="2.77" fill="#2F5D7E"/><circle cx="172.5" cy="81.7" r="2.74" fill="#2F5D7E"/><circle cx="58.7" cy="162.8" r="2.72" fill="#2F5D7E"/><circle cx="88.0" cy="25.5" r="2.69" fill="#2F5D7E"/><circle cx="159.5" cy="147.0" r="2.66" fill="#2F5D7E"/><circle cx="24.0" cy="105.5" r="2.63" fill="#2F5D7E"/><circle cx="152.6" cy="44.3" r="2.60" fill="#2F5D7E"/><circle cx="98.8" cy="176.9" r="2.58" fill="#2F5D7E"/><circle cx="48.7" cy="42.3" r="2.55" fill="#2F5D7E"/><circle cx="177.2" cy="108.0" r="2.52" fill="#2F5D7E"/><circle cx="37.4" cy="146.5" r="2.49" fill="#2F5D7E"/><circle cx="114.8" cy="23.1" r="2.46" fill="#2F5D7E"/><circle cx="141.2" cy="167.0" r="2.44" fill="#2F5D7E"/><circle cx="24.0" cy="78.3" r="2.41" fill="#2F5D7E"/><circle cx="171.0" cy="64.5" r="2.38" fill="#2F5D7E"/><circle cx="71.5" cy="174.4" r="2.35" fill="#2F5D7E"/><circle cx="70.6" cy="25.6" r="2.32" fill="#2F5D7E"/><circle cx="172.3" cy="135.2" r="2.30" fill="#2F5D7E"/><circle cx="22.6" cy="123.0" r="2.27" fill="#2F5D7E"/><circle cx="141.7" cy="30.5" r="2.24" fill="#2F5D7E"/><circle cx="116.3" cy="179.8" r="2.21" fill="#2F5D7E"/><circle cx="33.9" cy="52.0" r="2.18" fill="#2F5D7E"/><circle cx="181.5" cy="90.7" r="2.16" fill="#2F5D7E"/><circle cx="45.9" cy="162.2" r="2.13" fill="#2F5D7E"/><circle cx="97.8" cy="17.3" r="2.10" fill="#2F5D7E"/><circle cx="157.7" cy="159.8" r="2.07" fill="#2F5D7E"/><circle cx="16.8" cy="94.9" r="2.04" fill="#2F5D7E"/><circle cx="165.1" cy="47.3" r="2.02" fill="#2F5D7E"/><circle cx="87.5" cy="183.1" r="1.99" fill="#2F5D7E"/><circle cx="52.9" cy="30.0" r="1.96" fill="#2F5D7E"/><circle cx="182.3" cy="119.8" r="1.93" fill="#2F5D7E"/><circle cx="25.6" cy="141.1" r="1.90" fill="#2F5D7E"/><circle cx="127.2" cy="19.1" r="1.88" fill="#2F5D7E"/><circle cx="134.7" cy="178.3" r="1.85" fill="#2F5D7E"/><circle cx="21.2" cy="65.6" r="1.82" fill="#2F5D7E"/><circle cx="181.6" cy="72.0" r="1.79" fill="#2F5D7E"/><circle cx="58.5" cy="176.0" r="1.76" fill="#2F5D7E"/><circle cx="79.1" cy="15.6" r="1.74" fill="#2F5D7E"/><circle cx="172.7" cy="148.3" r="1.71" fill="#2F5D7E"/><circle cx="13.5" cy="113.5" r="1.68" fill="#2F5D7E"/><circle cx="154.9" cy="31.4" r="1.65" fill="#2F5D7E"/><circle cx="105.9" cy="188.0" r="1.62" fill="#2F5D7E"/><circle cx="36.0" cy="38.9" r="1.60" fill="#2F5D7E"/><circle cx="188.8" cy="101.8" r="1.57" fill="#2F5D7E"/><circle cx="33.1" cy="158.9" r="1.54" fill="#2F5D7E"/><circle cx="109.6" cy="11.1" r="1.51" fill="#2F5D7E"/><circle cx="153.1" cy="172.3" r="1.48" fill="#2F5D7E"/><circle cx="11.7" cy="82.5" r="1.46" fill="#2F5D7E"/><circle cx="177.2" cy="53.1" r="1.43" fill="#2F5D7E"/></svg></div>
+</div>
+</section>
+
+<section id="sobre">
+<div class="wrap">
+<p class="kicker"><span class="pt">Sobre o laboratório</span><span class="en">About the lab</span></p>
+<h2><span class="pt">Fermentação como ponto de encontro</span><span class="en">Fermentation as common ground</span></h2>
+<div class="about">
+<div>
+<p><span class="pt">A fermentação é uma das formas mais antigas de transformar alimentos. Por trás de uma cerveja, de um kefir ou de um aluá existe uma comunidade de microrganismos que muda a composição da matéria-prima, produz compostos bioativos e garante a estabilidade do produto. O mesmo tipo de processo, em outra escala, transforma resíduos orgânicos em biogás e biofertilizante.</span><span class="en">Fermentation is one of the oldest ways of transforming food. Behind a beer, a kefir or an aluá there is a community of microorganisms that changes the raw material, produces bioactive compounds and keeps the product stable. The same kind of process, at another scale, turns organic waste into biogas and biofertilizer.</span></p>
+<p><span class="pt">O LabFerm reúne grupos do Instituto de Microbiologia que trabalham com esses sistemas. Como laboratório multiusuário, a infraestrutura será compartilhada entre pesquisadores, estudantes e parceiros da UFRJ e de outras instituições.</span><span class="en">LabFerm brings together groups from the Institute of Microbiology that work on these systems. As a multiuser facility, its infrastructure will be shared among researchers, students and partners from UFRJ and other institutions.</span></p>
+</div>
+<div>
+<p><span class="pt">O Brasil guarda fermentações tradicionais construídas por povos indígenas, comunidades afro-brasileiras e agricultores familiares, como aluá, cauim e caxiri. A maior parte delas ainda é pouco estudada. Documentar esses ecossistemas microbianos é também uma forma de preservar patrimônio biocultural e encontrar recursos de interesse para saúde, segurança alimentar e bioeconomia.</span><span class="en">Brazil holds traditional fermentations built by Indigenous peoples, Afro-Brazilian communities and family farmers, such as aluá, cauim and caxiri. Most of them remain poorly studied. Documenting these microbial ecosystems is also a way to preserve biocultural heritage and find resources for health, food security and the bioeconomy.</span></p>
+<div class="facts">
+<div class="fact"><strong>6</strong><span><span class="pt">pesquisadores</span><span class="en">researchers</span></span></div>
+<div class="fact"><strong>4</strong><span><span class="pt">linhas de pesquisa</span><span class="en">research lines</span></span></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="alt" id="linhas">
+<div class="wrap">
+<p class="kicker"><span class="pt">Linhas de pesquisa</span><span class="en">Research lines</span></p>
+<h2><span class="pt">Do alimento ao biogás</span><span class="en">From food to biogas</span></h2>
+<p class="intro"><span class="pt">Quatro frentes de trabalho que compartilham métodos de cultivo, análise e caracterização de microrganismos fermentadores.</span><span class="en">Four research fronts that share methods for culturing, analysing and characterizing fermenting microorganisms.</span></p>
+<div class="grid4"><article class="line" style="--c:#F4C9A0">
+<span class="dot" aria-hidden="true"></span>
+<h3><span class="pt">Alimentos e bebidas fermentados</span><span class="en">Fermented foods and beverages</span></h3>
+<p><span class="pt">Ecologia microbiana de fermentações tradicionais brasileiras como aluá, além de kefir, kombucha e rejuvelac. Seleção de leveduras cervejeiras e de bactérias láticas com potencial probiótico.</span><span class="en">Microbial ecology of traditional Brazilian fermentations such as aluá, as well as kefir, kombucha and rejuvelac. Selection of brewing yeasts and lactic acid bacteria with probiotic potential.</span></p>
+<p class="who">Marco Miguel · Ana Mazotto</p>
+</article><article class="line" style="--c:#A9C4DD">
+<span class="dot" aria-hidden="true"></span>
+<h3><span class="pt">Digestão anaeróbia e biogás</span><span class="en">Anaerobic digestion and biogas</span></h3>
+<p><span class="pt">Produção de metano a partir de resíduos orgânicos, vias metanogênicas e valorização do digestato como biofertilizante seguro.</span><span class="en">Methane production from organic residues, methanogenic pathways and the use of digestate as a safe biofertilizer.</span></p>
+<p class="who">Thuane Anacleto · Fernanda Abreu</p>
+</article><article class="line" style="--c:#F2AE9E">
+<span class="dot" aria-hidden="true"></span>
+<h3><span class="pt">Bioprodutos, nanobiotecnologia e biorremediação</span><span class="en">Bioproducts, nanobiotechnology and bioremediation</span></h3>
+<p><span class="pt">Enzimas microbianas e processos fermentativos para tratar efluentes, degradar corantes e transformar resíduos em produtos de valor. Inclui as bactérias magnetotáticas e a produção de magnetossomos, nanopartículas magnéticas de origem biológica com aplicação em saúde e remediação ambiental.</span><span class="en">Microbial enzymes and fermentation processes to treat effluents, degrade dyes and turn residues into valuable products. It includes magnetotactic bacteria and magnetosomes, biogenic magnetic nanoparticles with uses in health and environmental remediation.</span></p>
+<p class="who">Ana Mazotto · Fernanda Abreu</p>
+</article><article class="line" style="--c:#C7C1E3">
+<span class="dot" aria-hidden="true"></span>
+<h3><span class="pt">Microbiota, probióticos e saúde</span><span class="en">Microbiota, probiotics and health</span></h3>
+<p><span class="pt">Interação entre microrganismos fermentadores, microbiota intestinal e saúde humana e animal.</span><span class="en">How fermenting microorganisms, the gut microbiota and human and animal health interact.</span></p>
+<p class="who">Leandro Lobo · Eliane Ferreira</p>
+</article></div>
+</div>
+</section>
+
+<section id="equipe">
+<div class="wrap">
+<p class="kicker"><span class="pt">Equipe</span><span class="en">Team</span></p>
+<div class="team"><article class="member">
+<img class="avatar" src="fotos/ana.jpg" alt="Ana Maria Mazotto de Almeida" width="80" height="80">
+<h3>Ana Maria Mazotto de Almeida</h3>
+<p class="role"><span class="pt">Professora do Instituto de Microbiologia Paulo de Góes</span><span class="en">Professor, Paulo de Góes Institute of Microbiology</span></p>
+<p class="focus"><span class="pt">Enzimas microbianas, biocatálise e processos fermentativos para converter resíduos agroindustriais em bioprodutos.</span><span class="en">Microbial enzymes, biocatalysis and fermentation processes that turn agro-industrial residues into bioproducts.</span></p>
+<div class="links"><a class="chip primary" href="http://lattes.cnpq.br/0363309102217122" target="_blank" rel="noopener"><span class="pt">Currículo Lattes</span><span class="en">Lattes CV</span></a></div>
+</article><article class="member">
+<img class="avatar" src="fotos/eliane.jpg" alt="Eliane de Oliveira Ferreira" width="80" height="80">
+<h3>Eliane de Oliveira Ferreira</h3>
+<p class="role"><span class="pt">Professora do Instituto de Microbiologia Paulo de Góes</span><span class="en">Professor, Paulo de Góes Institute of Microbiology</span></p>
+<p class="focus"><span class="pt">Bactérias anaeróbias, <i>Clostridioides difficile</i> e consórcios bacterianos para o tratamento de doenças intestinais, numa perspectiva de Saúde Única.</span><span class="en">Anaerobic bacteria, <i>Clostridioides difficile</i> and bacterial consortia to treat intestinal disease, from a One Health perspective.</span></p>
+<div class="links"><a class="chip primary" href="http://lattes.cnpq.br/1735321710333087" target="_blank" rel="noopener"><span class="pt">Currículo Lattes</span><span class="en">Lattes CV</span></a><a class="chip" href="https://orcid.org/0000-0002-9977-6460" target="_blank" rel="noopener">ORCID</a></div>
+</article><article class="member">
+<img class="avatar" src="fotos/fernanda.jpg" alt="Fernanda de Avila Abreu" width="80" height="80">
+<h3>Fernanda de Avila Abreu</h3>
+<p class="role"><span class="pt">Professora do Instituto de Microbiologia Paulo de Góes</span><span class="en">Professor, Paulo de Góes Institute of Microbiology</span></p>
+<p class="focus"><span class="pt">Microbiologia ambiental, ultraestrutura bacteriana e bactérias magnetotáticas, com aplicações em biorremediação e nanobiotecnologia.</span><span class="en">Environmental microbiology, bacterial ultrastructure and magnetotactic bacteria, with applications in bioremediation and nanobiotechnology.</span></p>
+<div class="links"><a class="chip primary" href="http://lattes.cnpq.br/9002458349761723" target="_blank" rel="noopener"><span class="pt">Currículo Lattes</span><span class="en">Lattes CV</span></a><a class="chip" href="https://orcid.org/0000-0003-2356-5840" target="_blank" rel="noopener">ORCID</a></div>
+</article><article class="member">
+<div class="avatar" style="background:#C9DAE8" aria-hidden="true">LL</div>
+<h3>Leandro Araujo Lobo</h3>
+<p class="role"><span class="pt">Professor do Instituto de Microbiologia Paulo de Góes</span><span class="en">Professor, Paulo de Góes Institute of Microbiology</span></p>
+<p class="focus"><span class="pt">Microbiota intestinal, probióticos e prebióticos, interações patógeno-hospedeiro e bioprospecção de moléculas do microbioma.</span><span class="en">Gut microbiota, probiotics and prebiotics, host-pathogen interactions and bioprospecting of microbiome molecules.</span></p>
+<div class="links"><a class="chip primary" href="http://lattes.cnpq.br/3952808860263192" target="_blank" rel="noopener"><span class="pt">Currículo Lattes</span><span class="en">Lattes CV</span></a></div>
+</article><article class="member">
+<img class="avatar" src="fotos/marco.jpg" alt="Marco Antônio Lemos Miguel" width="80" height="80">
+<h3>Marco Antônio Lemos Miguel</h3>
+<p class="role"><span class="pt">Professor do Instituto de Microbiologia Paulo de Góes</span><span class="en">Professor, Paulo de Góes Institute of Microbiology</span></p>
+<p class="focus"><span class="pt">Microbiologia de alimentos, bactérias láticas, leveduras cervejeiras e bebidas fermentadas tradicionais como o aluá e o kefir.</span><span class="en">Food microbiology, lactic acid bacteria, brewing yeasts and traditional fermented beverages such as aluá and kefir.</span></p>
+<div class="links"><a class="chip primary" href="http://lattes.cnpq.br/9882234282179560" target="_blank" rel="noopener"><span class="pt">Currículo Lattes</span><span class="en">Lattes CV</span></a><a class="chip" href="https://orcid.org/0000-0002-6964-0749" target="_blank" rel="noopener">ORCID</a></div>
+</article><article class="member">
+<img class="avatar" src="fotos/thuane.jpg" alt="Thuane Mendes Anacleto" width="80" height="80">
+<h3>Thuane Mendes Anacleto</h3>
+<p class="role"><span class="pt">Técnica de laboratório do Instituto de Microbiologia Paulo de Góes e pós-doutoranda</span><span class="en">Laboratory technician, Paulo de Góes Institute of Microbiology, and postdoctoral researcher</span></p>
+<p class="focus"><span class="pt">Digestão anaeróbia, produção de biogás e uso agrícola seguro do digestato, com recuperação de nutrientes na economia circular.</span><span class="en">Anaerobic digestion, biogas production and safe agricultural use of digestate, with nutrient recovery in a circular economy.</span></p>
+<div class="links"><a class="chip primary" href="http://lattes.cnpq.br/2149016418882918" target="_blank" rel="noopener"><span class="pt">Currículo Lattes</span><span class="en">Lattes CV</span></a><a class="chip" href="https://orcid.org/0000-0002-9375-2767" target="_blank" rel="noopener">ORCID</a></div>
+</article></div>
+</div>
+</section>
+
+<section class="alt" id="projetos">
+<div class="wrap">
+<p class="kicker"><span class="pt">Projetos em andamento</span><span class="en">Ongoing projects</span></p>
+<h2><span class="pt">O que estamos investigando</span><span class="en">What we are working on</span></h2>
+<div class="projects"><article class="project" style="--c:#F4C9A0">
+<p class="meta"><span class="pt">Desde</span><span class="en">Since</span> 2020</p>
+<h3><span class="pt">Aluá, o primeiro refrigerante brasileiro. Resgate histórico e a importância de povos afro-brasileiros na popularização da bebida</span><span class="en">Aluá, the first Brazilian soft drink. Historical recovery and the role of Afro-Brazilian peoples in popularizing the drink</span></h3>
+<p class="coord"><span class="pt">Coordenação</span><span class="en">Lead</span>: Marco Antônio Lemos Miguel</p>
+</article><article class="project" style="--c:#F4C9A0">
+<p class="meta"><span class="pt">Desde</span><span class="en">Since</span> 2024</p>
+<h3><span class="pt">Aproveitamento de produtos, subprodutos e matérias-primas para o desenvolvimento de meios de cultura para bactérias láticas e leveduras</span><span class="en">Using products, by-products and raw materials to develop culture media for lactic acid bacteria and yeasts</span></h3>
+<p class="coord"><span class="pt">Coordenação</span><span class="en">Lead</span>: Marco Antônio Lemos Miguel</p>
+</article><article class="project" style="--c:#A9C4DD">
+<p class="meta"><span class="pt">Desde</span><span class="en">Since</span> 2020 · FAPERJ</p>
+<h3><span class="pt">Valorização do digestato para uso agrícola seguro e recuperação de nutrientes em sistemas de economia circular</span><span class="en">Digestate valorization for safe agricultural use and nutrient recovery in circular economy systems</span></h3>
+<p class="coord"><span class="pt">Coordenação</span><span class="en">Lead</span>: Thuane Mendes Anacleto</p>
+</article><article class="project" style="--c:#F2AE9E">
+<p class="meta"><span class="pt">Desde</span><span class="en">Since</span> 2018 · CNPq</p>
+<h3><span class="pt">Enzimas microbianas: da redução de impacto ambiental de atividades industriais à geração de bioprodutos</span><span class="en">Microbial enzymes, from reducing the environmental impact of industry to generating bioproducts</span></h3>
+<p class="coord"><span class="pt">Coordenação</span><span class="en">Lead</span>: Ana Maria Mazotto de Almeida</p>
+</article><article class="project" style="--c:#F2AE9E">
+<p class="meta"><span class="pt">Desde</span><span class="en">Since</span> 2022</p>
+<h3><span class="pt">Aplicação do princípio de Lavoisier à Microbiologia. Alterações na natureza química da matéria pelo metabolismo microbiano</span><span class="en">Applying Lavoisier's principle to Microbiology. How microbial metabolism changes the chemical nature of matter</span></h3>
+<p class="coord"><span class="pt">Coordenação</span><span class="en">Lead</span>: Fernanda de Avila Abreu</p>
+</article><article class="project" style="--c:#C7C1E3">
+<p class="meta"><span class="pt">Desde</span><span class="en">Since</span> 2018 · FAPERJ</p>
+<h3><span class="pt">Estratégias para melhorar a saúde humana através de intervenções na microbiota. Bioprospecção e imunidade</span><span class="en">Strategies to improve human health through microbiota interventions. Bioprospecting and immunity</span></h3>
+<p class="coord"><span class="pt">Coordenação</span><span class="en">Lead</span>: Leandro Araujo Lobo</p>
+</article><article class="project" style="--c:#C7C1E3">
+<p class="meta"><span class="pt">Desde</span><span class="en">Since</span> 2023 · FAPERJ</p>
+<h3><span class="pt">Desenvolvimento de um consórcio bacteriano para o tratamento de diarreia e colites em seres humanos e cães domésticos</span><span class="en">A bacterial consortium to treat diarrhoea and colitis in humans and dogs</span></h3>
+<p class="coord"><span class="pt">Coordenação</span><span class="en">Lead</span>: Eliane de Oliveira Ferreira</p>
+</article></div>
+</div>
+</section>
+
+<section id="publicacoes">
+<div class="wrap">
+<p class="kicker"><span class="pt">Publicações</span><span class="en">Publications</span></p>
+<h2><span class="pt">Artigos de 2026</span><span class="en">2026 papers</span></h2>
+<div class="filters" role="group" aria-label="Filtrar por pesquisador"><button type="button" class="filter on" data-f="all"><span class="pt">Todos</span><span class="en">All</span></button><button type="button" class="filter" data-f="Ana Maria Mazotto de Almeida">Ana Mazotto</button><button type="button" class="filter" data-f="Eliane de Oliveira Ferreira">Eliane Ferreira</button><button type="button" class="filter" data-f="Fernanda de Avila Abreu">Fernanda Abreu</button><button type="button" class="filter" data-f="Leandro Araujo Lobo">Leandro Lobo</button><button type="button" class="filter" data-f="Marco Antônio Lemos Miguel">Marco Miguel</button><button type="button" class="filter" data-f="Thuane Mendes Anacleto">Thuane Anacleto</button></div>
+<p class="count" aria-live="polite"><span id="pubcount">14</span> <span class="pt">publicações</span><span class="en">publications</span></p>
+<ol class="pubs"><li class="pub" data-members="Thuane Mendes Anacleto">
+<p class="title">Performance-based criteria for safe and circular digestate use in agriculture</p>
+<p class="authors">Anacleto TM, Oliveira HR, Carraro G, Skvortsova P, Šafarič L, Shakeri Yekta S, Björn A, Pinheiros EFM, Enrich-Prast A</p>
+<p class="venue"><em>Scientific Reports</em>, 16, 2026</p>
+<div class="pubfoot"><a class="doi" href="https://doi.org/10.1038/s41598-025-33314-x" target="_blank" rel="noopener">doi.org/10.1038/s41598-025-33314-x</a><span class="tags"><span class="tag">Thuane Anacleto</span></span></div>
+</li><li class="pub" data-members="Thuane Mendes Anacleto|Fernanda de Avila Abreu">
+<p class="title">Unraveling the influence of environmental and operational conditions on the methanogenic pathways in full-scale anaerobic digesters</p>
+<p class="authors">Oliveira H, Carraro G, Anacleto TM, Šafarič L, Shakeri Yekta S, Björn A, Abreu F, Enrich-Prast A</p>
+<p class="venue"><em>Biomass &amp; Bioenergy</em>, 209, 108994, 2026</p>
+<div class="pubfoot"><span class="pending"><span class="pt">DOI a confirmar</span><span class="en">DOI to be confirmed</span></span><span class="tags"><span class="tag">Thuane Anacleto</span> <span class="tag">Fernanda Abreu</span></span></div>
+</li><li class="pub" data-members="Thuane Mendes Anacleto">
+<p class="title">Solvent-selective complexity reduction of effluent dissolved organic matter for <sup>1</sup>H NMR spectroscopy</p>
+<p class="authors">Shakeri Yekta S, Enrich-Prast A, Hedenström M, Sparrman T, Šafarič L, Carraro G, Oliveira HR, Anacleto TM, Björn A, Hertkorn N</p>
+<p class="venue"><em>Analytical Chemistry</em>, 2026</p>
+<div class="pubfoot"><span class="pending"><span class="pt">DOI a confirmar</span><span class="en">DOI to be confirmed</span></span><span class="tags"><span class="tag">Thuane Anacleto</span></span></div>
+</li><li class="pub" data-members="Marco Antônio Lemos Miguel">
+<p class="title">Genomics of <i>Saccharomyces cariocanus</i> G01, a potential aromatic brewing yeast from Brazil</p>
+<p class="authors">Nobre Linhares S, Amaral JRV, de Oliveira LM, Squizani ED, da Conceição CS, Gonçalves CAX, da Silva S, de Assis Ribeiro JR, de Oliveira SS, Macrae A, Hagler AN, Miguel MAL</p>
+<p class="venue"><em>Brazilian Journal of Microbiology</em>, 57, 2026</p>
+<div class="pubfoot"><a class="doi" href="https://doi.org/10.1007/s42770-025-01811-w" target="_blank" rel="noopener">doi.org/10.1007/s42770-025-01811-w</a><span class="tags"><span class="tag">Marco Miguel</span></span></div>
+</li><li class="pub" data-members="Leandro Araujo Lobo">
+<p class="title">Microbial adaptation and host signaling: <i>Bacteroides</i>-bile acid interactions in gut health</p>
+<p class="authors">Guimarães Silva CM, Ferreira RBR, Lobo LA</p>
+<p class="venue"><em>Anaerobe</em>, 98, 103041, 2026</p>
+<div class="pubfoot"><a class="doi" href="https://doi.org/10.1016/j.anaerobe.2026.103041" target="_blank" rel="noopener">doi.org/10.1016/j.anaerobe.2026.103041</a><span class="tags"><span class="tag">Leandro Lobo</span></span></div>
+</li><li class="pub" data-members="Leandro Araujo Lobo">
+<p class="title">Bile salt-mediated adaptation of <i>Bacteroides fragilis</i>: in vitro analysis of colonization and metabolism</p>
+<p class="authors">Silva CMG, Dos Santos CEN, Gomes M, Bezerra FF, Mourão PAS, Hamerski L, Ferreira RBR, Lobo LA</p>
+<p class="venue"><em>Anaerobe</em>, 99, 103063, 2026</p>
+<div class="pubfoot"><a class="doi" href="https://doi.org/10.1016/j.anaerobe.2026.103063" target="_blank" rel="noopener">doi.org/10.1016/j.anaerobe.2026.103063</a><span class="tags"><span class="tag">Leandro Lobo</span></span></div>
+</li><li class="pub" data-members="Eliane de Oliveira Ferreira">
+<p class="title">The first identification of the epidemic <i>Clostridioides difficile</i> PCR ribotype 027 strain in Brazil: a case report of colitis in a patient from a public hospital in Rio de Janeiro</p>
+<p class="authors">Azevedo A, Lupi O, Gomes M, Rizz PB, Pinheiro EP, Borges AS, Cerri FM, Smits WK, Ferreira EO</p>
+<p class="venue"><em>FEMS Microbiology Letters</em>, 2026</p>
+<div class="pubfoot"><a class="doi" href="https://doi.org/10.1093/femsle/fnag002" target="_blank" rel="noopener">doi.org/10.1093/femsle/fnag002</a><span class="tags"><span class="tag">Eliane Ferreira</span></span></div>
+</li><li class="pub" data-members="Eliane de Oliveira Ferreira">
+<p class="title">Comparative genomic analysis of <i>Staphylococcus</i> spp. and <i>Mammaliicoccus sciuri</i> suggests potential sharing between dogs and their owners</p>
+<p class="authors">Bonnard FC, Guimarães L, Souza ABSR, Pinheiro FR, da Silva IT, Teixeira IM, Neves FPG, de Oliveira Ferreira E, Di Azevedo MI, Penna B</p>
+<p class="venue"><em>Frontiers in Public Health</em>, 14, 2026</p>
+<div class="pubfoot"><a class="doi" href="https://doi.org/10.3389/fpubh.2026.1879619" target="_blank" rel="noopener">doi.org/10.3389/fpubh.2026.1879619</a><span class="tags"><span class="tag">Eliane Ferreira</span></span></div>
+</li><li class="pub" data-members="Eliane de Oliveira Ferreira">
+<p class="title">Preparation of spores with the 70:30 method</p>
+<p class="authors">de Oliveira Ferreira E</p>
+<p class="venue"><em>Methods in Molecular Biology (Springer)</em>, 83–91, 2026</p>
+<div class="pubfoot"><a class="doi" href="https://doi.org/10.1007/978-1-0716-5328-9_6" target="_blank" rel="noopener">doi.org/10.1007/978-1-0716-5328-9_6</a><span class="tags"><span class="tag">Eliane Ferreira</span></span></div>
+</li><li class="pub" data-members="Fernanda de Avila Abreu">
+<p class="title">Magnetoreception in a freshwater ciliate arises from endosymbiosis</p>
+<p class="authors">Bolzoni R, Monteil CL, Alonso B, Bergot M, Chevrier DM, Godon C, Menguy N, Fouteau S, Da Cunha V, Skouri-Panet F, Pereiro E, Duverger A, Vallenet D, Cruaud C, Abreu F, Benzerara K, Lefevre CT</p>
+<p class="venue"><em>Nature Communications</em>, 2026</p>
+<div class="pubfoot"><a class="doi" href="https://doi.org/10.1038/s41467-026-70462-8" target="_blank" rel="noopener">doi.org/10.1038/s41467-026-70462-8</a><span class="tags"><span class="tag">Fernanda Abreu</span></span></div>
+</li><li class="pub" data-members="Fernanda de Avila Abreu">
+<p class="title">Anticorrosion potential of a bioemulsifier produced by <i>Psychrobacillus antarcticus</i> Val9 isolated from Antarctic soil</p>
+<p class="authors">de Castilho LVA, Barreto AL, Santaren KCF, Rosenblatt MBF, Taveira I, Cypriano J, Abreu F, de Godoy MG, Jurelevicius DA, Seldin L</p>
+<p class="venue"><em>Frontiers in Microbiology</em>, 16, 2026</p>
+<div class="pubfoot"><a class="doi" href="https://doi.org/10.3389/fmicb.2025.1694832" target="_blank" rel="noopener">doi.org/10.3389/fmicb.2025.1694832</a><span class="tags"><span class="tag">Fernanda Abreu</span></span></div>
+</li><li class="pub" data-members="Fernanda de Avila Abreu">
+<p class="title">Magnetosome membranes: a promising biogenic nanomodel for drug-membrane interaction studies</p>
+<p class="authors">Silveira F, Correa T, Abreu F</p>
+<p class="venue"><em>Colloid and Interface Science Communications</em>, 72, 100876, 2026</p>
+<div class="pubfoot"><span class="pending"><span class="pt">DOI a confirmar</span><span class="en">DOI to be confirmed</span></span><span class="tags"><span class="tag">Fernanda Abreu</span></span></div>
+</li><li class="pub" data-members="Fernanda de Avila Abreu|Ana Maria Mazotto de Almeida">
+<p class="title">Degradation of azo dyes by [<i>gênero</i>] species: isolation and selection of new strains exhibiting enzymatic diversity with potential application in wastewater treatment</p>
+<p class="authors">Ramos J, Guimarães J, Paz MM, Simão da Rosa L, Cabral AS, Pereira Rangel L, Abreu FA, Mazotto AM</p>
+<p class="venue"><em>Bioremediation Journal</em>, 1–17, 2026</p>
+<div class="pubfoot"><span class="pending"><span class="pt">DOI a confirmar</span><span class="en">DOI to be confirmed</span></span><span class="tags"><span class="tag">Fernanda Abreu</span> <span class="tag">Ana Mazotto</span></span></div>
+</li><li class="pub" data-members="Fernanda de Avila Abreu">
+<p class="title">Arbuscular mycorrhizal fungal ([<i>táxon</i>]) communities in sand bars associated with [<i>espécie</i>]: a promising strategy for petroleum spill bioremediation in coastal dunes</p>
+<p class="authors">de Andrade OF, de Souza ES, Nobre CP, Abreu FA, de Oliveira MM, Zandonadi DB, Saraiva VB, Martins RL</p>
+<p class="venue"><em>Restoration Ecology</em>, 2026</p>
+<div class="pubfoot"><span class="pending"><span class="pt">DOI a confirmar</span><span class="en">DOI to be confirmed</span></span><span class="tags"><span class="tag">Fernanda Abreu</span></span></div>
+</li></ol>
+<p class="note"><span class="pt">Lista gerada a partir dos currículos Lattes dos membros, com DOI conferido nas bases das editoras.</span><span class="en">List built from the team's Lattes CVs, with DOIs checked against publisher records.</span></p>
+</div>
+</section>
+
+<section class="alt" id="obra">
+<div class="wrap obra">
+<div class="video"><video controls playsinline preload="metadata" poster="video/poster.jpg" aria-label="Vídeo da obra do LabFerm / LabFerm construction video"><source src="video/labferm_obra.mp4" type="video/mp4"></video></div>
+<div>
+<p class="kicker"><span class="pt">A obra</span><span class="en">Construction</span></p>
+<h2><span class="pt">Um prédio ganhando nova vida</span><span class="en">A building coming back to life</span></h2>
+<p class="intro" style="margin-bottom:24px"><span class="pt">O laboratório está sendo implantado no antigo edifício Baktron, na Cidade Universitária. Acompanhe aqui cada etapa.</span><span class="en">The lab is being set up in the former Baktron building at Cidade Universitária. Follow each stage here.</span></p>
+<ol class="steps">
+<li><span class="mk done" aria-hidden="true"></span><div><strong><span class="pt">Levantamento e planta</span><span class="en">Survey and floor plan</span></strong><span><span class="pt">Medição do prédio e projeto do espaço.</span><span class="en">Building survey and space design.</span></span></div></li>
+<li><span class="mk now" aria-hidden="true"></span><div><strong><span class="pt">Limpeza e retirada de materiais</span><span class="en">Clearing the site</span></strong><span><span class="pt">Etapa atual.</span><span class="en">Current stage.</span></span></div></li>
+<li><span class="mk" aria-hidden="true"></span><div><strong><span class="pt">Reforma e instalações</span><span class="en">Renovation and utilities</span></strong><span><span class="pt">Próxima etapa.</span><span class="en">Next stage.</span></span></div></li>
+<li><span class="mk" aria-hidden="true"></span><div><strong><span class="pt">Equipamentos e abertura</span><span class="en">Equipment and opening</span></strong><span><span class="pt">Laboratório pronto para os usuários.</span><span class="en">Lab open to users.</span></span></div></li>
+</ol>
+</div>
+</div>
+</section>
+
+<section id="onde">
+<div class="wrap where">
+<div>
+<p class="kicker"><span class="pt">Onde estamos</span><span class="en">Location</span></p>
+<h2><span class="pt">Cidade Universitária, Ilha do Fundão</span><span class="en">Cidade Universitária, Ilha do Fundão</span></h2>
+<address class="addr">Avenida Carlos Chagas Filho, 791<br>Cidade Universitária, Rio de Janeiro, RJ</address>
+<p style="color:var(--muted);margin:0 0 24px"><span class="pt">Laboratório associado ao Instituto de Microbiologia Paulo de Góes, Centro de Ciências da Saúde, UFRJ.</span><span class="en">Associated with the Paulo de Góes Institute of Microbiology, Health Sciences Centre, UFRJ.</span></p>
+<a class="btn solid" href="https://www.google.com/maps/search/?api=1&amp;query=Avenida+Carlos+Chagas+Filho+791+Cidade+Universit%C3%A1ria+Rio+de+Janeiro" target="_blank" rel="noopener"><span class="pt">Abrir no Google Maps</span><span class="en">Open in Google Maps</span></a>
+</div>
+<div class="mapcard" aria-hidden="true">
+<svg viewBox="0 0 400 300">
+<rect width="400" height="300" fill="#EEF3F7"/>
+<path d="M0 210 C90 190 150 240 240 215 S360 180 400 195 V300 H0Z" fill="#C9DAE8"/>
+<path d="M-10 120 L420 150" stroke="#fff" stroke-width="16"/>
+<path d="M150 -10 L190 310" stroke="#fff" stroke-width="10"/>
+<rect x="60" y="40" width="70" height="55" rx="6" fill="#DCE5E3"/><rect x="215" y="35" width="110" height="60" rx="6" fill="#DCE5E3"/>
+<rect x="215" y="165" width="80" height="35" rx="6" fill="#DCE5E3"/>
+<g transform="translate(250 92)"><circle r="26" fill="#2F5D7E" opacity=".15"/><path d="M0 18 C-14 0 -14 -8 -14 -12 A14 14 0 0 1 14 -12 C14 -8 14 0 0 18Z" fill="#2F5D7E"/><circle cy="-12" r="5" fill="#fff"/></g>
+<text x="250" y="140" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="14" font-weight="600" fill="#1D2B3A">LabFerm</text>
+</svg>
+</div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="wrap">
+<div>
+<div class="brand" style="color:#fff;margin-bottom:12px"><svg viewBox="0 0 200 200" width="40" height="40" aria-hidden="true"><circle cx="94.5" cy="105.0" r="5.57" fill="#E8735A"/><circle cx="100.9" cy="89.6" r="5.54" fill="#E8735A"/><circle cx="107.8" cy="110.2" r="5.52" fill="#E8735A"/><circle cx="85.4" cy="97.4" r="5.49" fill="#E8735A"/><circle cx="114.0" cy="91.1" r="5.46" fill="#E8735A"/><circle cx="95.3" cy="117.5" r="5.43" fill="#E8735A"/><circle cx="91.0" cy="82.6" r="5.40" fill="#E8735A"/><circle cx="119.7" cy="107.2" r="5.38" fill="#E8735A"/><circle cx="79.5" cy="108.5" r="5.35" fill="#E8735A"/><circle cx="109.9" cy="78.8" r="5.32" fill="#FFFFFF"/><circle cx="107.3" cy="123.4" r="5.29" fill="#FFFFFF"/><circle cx="77.8" cy="87.1" r="5.26" fill="#FFFFFF"/><circle cx="126.1" cy="94.3" r="5.24" fill="#FFFFFF"/><circle cx="84.1" cy="122.6" r="5.21" fill="#FFFFFF"/><circle cx="96.3" cy="71.6" r="5.18" fill="#FFFFFF"/><circle cx="122.6" cy="119.1" r="5.15" fill="#FFFFFF"/><circle cx="69.5" cy="101.3" r="5.12" fill="#FFFFFF"/><circle cx="122.3" cy="77.9" r="5.10" fill="#FFFFFF"/><circle cx="98.5" cy="132.2" r="5.07" fill="#FFFFFF"/><circle cx="78.8" cy="74.6" r="5.04" fill="#FFFFFF"/><circle cx="133.6" cy="104.5" r="5.01" fill="#FFFFFF"/><circle cx="71.5" cy="119.8" r="4.98" fill="#FFFFFF"/><circle cx="107.8" cy="65.4" r="4.96" fill="#FFFFFF"/><circle cx="118.0" cy="131.5" r="4.93" fill="#FFFFFF"/><circle cx="64.8" cy="88.8" r="4.90" fill="#FFFFFF"/><circle cx="134.3" cy="84.2" r="4.87" fill="#FFFFFF"/><circle cx="85.2" cy="135.5" r="4.84" fill="#FFFFFF"/><circle cx="86.8" cy="63.2" r="4.82" fill="#FFFFFF"/><circle cx="135.3" cy="118.5" r="4.79" fill="#FFFFFF"/><circle cx="60.8" cy="110.3" r="4.76" fill="#FFFFFF"/><circle cx="122.3" cy="65.3" r="4.73" fill="#FFFFFF"/><circle cx="107.1" cy="141.3" r="4.70" fill="#FFFFFF"/><circle cx="66.4" cy="74.0" r="4.68" fill="#FFFFFF"/><circle cx="143.0" cy="96.4" r="4.65" fill="#FFFFFF"/><circle cx="70.3" cy="132.1" r="4.62" fill="#FFFFFF"/><circle cx="100.2" cy="55.6" r="4.59" fill="#FFFFFF"/><circle cx="130.2" cy="133.3" r="4.56" fill="#FFFFFF"/><circle cx="54.6" cy="95.8" r="4.54" fill="#FFFFFF"/><circle cx="136.8" cy="72.1" r="4.51" fill="#FFFFFF"/><circle cx="91.6" cy="146.0" r="4.48" fill="#FFFFFF"/><circle cx="74.8" cy="59.9" r="4.45" fill="#FFFFFF"/><circle cx="146.2" cy="112.7" r="4.42" fill="#FFFFFF"/><circle cx="56.8" cy="122.1" r="4.40" fill="#FFFFFF"/><circle cx="117.1" cy="54.0" r="4.37" fill="#FFFFFF"/><circle cx="118.7" cy="146.0" r="4.34" fill="#FFFFFF"/><circle cx="54.7" cy="78.5" r="4.31" fill="#FFFFFF"/><circle cx="148.5" cy="85.1" r="4.28" fill="#FFFFFF"/><circle cx="74.1" cy="144.2" r="4.26" fill="#FFFFFF"/><circle cx="89.1" cy="49.4" r="4.23" fill="#FFFFFF"/><circle cx="142.7" cy="130.3" r="4.20" fill="#FFFFFF"/><circle cx="47.6" cy="106.5" r="4.17" fill="#FFFFFF"/><circle cx="134.6" cy="59.4" r="4.14" fill="#FFFFFF"/><circle cx="102.0" cy="153.8" r="4.12" fill="#FFFFFF"/><circle cx="61.8" cy="61.3" r="4.09" fill="#FFFFFF"/><circle cx="154.8" cy="102.8" r="4.06" fill="#FFFFFF"/><circle cx="57.3" cy="135.3" r="4.03" fill="#FFFFFF"/><circle cx="107.7" cy="44.7" r="4.00" fill="#FFFFFF"/><circle cx="131.9" cy="146.4" r="3.98" fill="#FFFFFF"/><circle cx="44.6" cy="87.2" r="3.95" fill="#FFFFFF"/><circle cx="149.9" cy="71.8" r="3.92" fill="#FFFFFF"/><circle cx="82.2" cy="155.0" r="3.89" fill="#FFFFFF"/><circle cx="75.8" cy="47.0" r="3.86" fill="#FFFFFF"/><circle cx="154.1" cy="123.0" r="3.84" fill="#FFFFFF"/><circle cx="44.2" cy="119.7" r="3.81" fill="#FFFFFF"/><circle cx="128.0" cy="47.3" r="3.78" fill="#FFFFFF"/><circle cx="115.0" cy="158.2" r="3.75" fill="#FFFFFF"/><circle cx="49.2" cy="67.0" r="3.72" fill="#FFFFFF"/><circle cx="160.2" cy="90.0" r="3.70" fill="#FFFFFF"/><circle cx="62.1" cy="148.4" r="3.67" fill="#FFFFFF"/><circle cx="95.2" cy="38.3" r="3.64" fill="#FFFFFF"/><circle cx="145.6" cy="142.6" r="3.61" fill="#FFFFFF"/><circle cx="37.2" cy="99.4" r="3.58" fill="#FFFFFF"/><circle cx="147.0" cy="57.8" r="3.56" fill="#FFFFFF"/><circle cx="93.8" cy="163.4" r="3.53" fill="#FFFFFF"/><circle cx="61.5" cy="48.8" r="3.50" fill="#FFFFFF"/><circle cx="163.4" cy="111.9" r="3.47" fill="#FFFFFF"/><circle cx="44.9" cy="134.3" r="3.44" fill="#FFFFFF"/><circle cx="117.6" cy="37.1" r="3.42" fill="#FFFFFF"/><circle cx="129.7" cy="158.7" r="3.39" fill="#FFFFFF"/><circle cx="38.1" cy="76.7" r="3.36" fill="#FFFFFF"/><circle cx="161.8" cy="75.2" r="3.33" fill="#FFFFFF"/><circle cx="71.0" cy="160.4" r="3.30" fill="#FFFFFF"/><circle cx="80.5" cy="35.5" r="3.28" fill="#FFFFFF"/><circle cx="158.3" cy="134.6" r="3.25" fill="#FFFFFF"/><circle cx="33.2" cy="114.0" r="3.22" fill="#FFFFFF"/><circle cx="140.0" cy="44.3" r="3.19" fill="#FFFFFF"/><circle cx="108.2" cy="168.5" r="3.16" fill="#FFFFFF"/><circle cx="47.4" cy="54.7" r="3.14" fill="#FFFFFF"/><circle cx="169.8" cy="97.8" r="3.11" fill="#FFFFFF"/><circle cx="49.7" cy="149.0" r="3.08" fill="#FFFFFF"/><circle cx="104.0" cy="29.5" r="3.05" fill="#FFFFFF"/><circle cx="144.9" cy="155.0" r="3.02" fill="#FFFFFF"/><circle cx="29.4" cy="89.8" r="3.00" fill="#FFFFFF"/><circle cx="159.3" cy="59.6" r="2.97" fill="#FFFFFF"/><circle cx="83.5" cy="170.2" r="2.94" fill="#FFFFFF"/><circle cx="64.6" cy="36.7" r="2.91" fill="#FFFFFF"/><circle cx="169.2" cy="122.9" r="2.88" fill="#FFFFFF"/><circle cx="33.2" cy="130.0" r="2.86" fill="#FFFFFF"/><circle cx="129.1" cy="32.4" r="2.83" fill="#FFFFFF"/><circle cx="124.3" cy="169.9" r="2.80" fill="#FFFFFF"/><circle cx="34.5" cy="64.7" r="2.77" fill="#FFFFFF"/><circle cx="172.5" cy="81.7" r="2.74" fill="#FFFFFF"/><circle cx="58.7" cy="162.8" r="2.72" fill="#FFFFFF"/><circle cx="88.0" cy="25.5" r="2.69" fill="#FFFFFF"/><circle cx="159.5" cy="147.0" r="2.66" fill="#FFFFFF"/><circle cx="24.0" cy="105.5" r="2.63" fill="#FFFFFF"/><circle cx="152.6" cy="44.3" r="2.60" fill="#FFFFFF"/><circle cx="98.8" cy="176.9" r="2.58" fill="#FFFFFF"/><circle cx="48.7" cy="42.3" r="2.55" fill="#FFFFFF"/><circle cx="177.2" cy="108.0" r="2.52" fill="#FFFFFF"/><circle cx="37.4" cy="146.5" r="2.49" fill="#FFFFFF"/><circle cx="114.8" cy="23.1" r="2.46" fill="#FFFFFF"/><circle cx="141.2" cy="167.0" r="2.44" fill="#FFFFFF"/><circle cx="24.0" cy="78.3" r="2.41" fill="#FFFFFF"/><circle cx="171.0" cy="64.5" r="2.38" fill="#FFFFFF"/><circle cx="71.5" cy="174.4" r="2.35" fill="#FFFFFF"/><circle cx="70.6" cy="25.6" r="2.32" fill="#FFFFFF"/><circle cx="172.3" cy="135.2" r="2.30" fill="#FFFFFF"/><circle cx="22.6" cy="123.0" r="2.27" fill="#FFFFFF"/><circle cx="141.7" cy="30.5" r="2.24" fill="#FFFFFF"/><circle cx="116.3" cy="179.8" r="2.21" fill="#FFFFFF"/><circle cx="33.9" cy="52.0" r="2.18" fill="#FFFFFF"/><circle cx="181.5" cy="90.7" r="2.16" fill="#FFFFFF"/><circle cx="45.9" cy="162.2" r="2.13" fill="#FFFFFF"/><circle cx="97.8" cy="17.3" r="2.10" fill="#FFFFFF"/><circle cx="157.7" cy="159.8" r="2.07" fill="#FFFFFF"/><circle cx="16.8" cy="94.9" r="2.04" fill="#FFFFFF"/><circle cx="165.1" cy="47.3" r="2.02" fill="#FFFFFF"/><circle cx="87.5" cy="183.1" r="1.99" fill="#FFFFFF"/><circle cx="52.9" cy="30.0" r="1.96" fill="#FFFFFF"/><circle cx="182.3" cy="119.8" r="1.93" fill="#FFFFFF"/><circle cx="25.6" cy="141.1" r="1.90" fill="#FFFFFF"/><circle cx="127.2" cy="19.1" r="1.88" fill="#FFFFFF"/><circle cx="134.7" cy="178.3" r="1.85" fill="#FFFFFF"/><circle cx="21.2" cy="65.6" r="1.82" fill="#FFFFFF"/><circle cx="181.6" cy="72.0" r="1.79" fill="#FFFFFF"/><circle cx="58.5" cy="176.0" r="1.76" fill="#FFFFFF"/><circle cx="79.1" cy="15.6" r="1.74" fill="#FFFFFF"/><circle cx="172.7" cy="148.3" r="1.71" fill="#FFFFFF"/><circle cx="13.5" cy="113.5" r="1.68" fill="#FFFFFF"/><circle cx="154.9" cy="31.4" r="1.65" fill="#FFFFFF"/><circle cx="105.9" cy="188.0" r="1.62" fill="#FFFFFF"/><circle cx="36.0" cy="38.9" r="1.60" fill="#FFFFFF"/><circle cx="188.8" cy="101.8" r="1.57" fill="#FFFFFF"/><circle cx="33.1" cy="158.9" r="1.54" fill="#FFFFFF"/><circle cx="109.6" cy="11.1" r="1.51" fill="#FFFFFF"/><circle cx="153.1" cy="172.3" r="1.48" fill="#FFFFFF"/><circle cx="11.7" cy="82.5" r="1.46" fill="#FFFFFF"/><circle cx="177.2" cy="53.1" r="1.43" fill="#FFFFFF"/></svg><span class="word"><span>Lab</span><b>Ferm</b></span></div>
+<p><span class="pt">Laboratório Multiusuário de Fermentações</span><span class="en">Multiuser Fermentation Laboratory</span></p>
+<p><span class="pt">Instituto de Microbiologia Paulo de Góes · UFRJ</span><span class="en">Paulo de Góes Institute of Microbiology · UFRJ</span></p>
+</div>
+<div>
+<p><strong><span class="pt">Contato</span><span class="en">Contact</span></strong></p>
+<div class="social light">
+<a data-social="instagram" href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.3" cy="6.7" r="1.2" fill="currentColor"/></svg></a>
+<a data-social="linkedin" href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M7.5 10v6.5M7.5 7.3v.1M11 16.5V10m0 3c0-1.8 1-3 2.6-3 1.5 0 2.4 1 2.4 2.9v3.6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></a>
+<a data-social="email" href="#" aria-label="E-mail"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M4 7l8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></a>
+</div>
+<p style="margin-top:12px"><a href="mailto:labfermufrj@gmail.com">labfermufrj@gmail.com</a></p>
+<p class="small" style="margin-top:12px">© 2026 LabFerm · UFRJ</p>
+</div>
+</div>
+</footer>
+
+<script>
+// Preencha aqui os links quando as contas estiverem criadas
+var SOCIAL = {
+  instagram: "",   // ex.: "https://instagram.com/labferm.ufrj"
+  linkedin: "",    // ex.: "https://www.linkedin.com/company/labferm"
+  email: "labfermufrj@gmail.com"
+};
+(function(){
+  document.querySelectorAll('[data-social]').forEach(function(a){
+    var k=a.getAttribute('data-social'), v=SOCIAL[k];
+    if(v){ a.href = k==='email' ? 'mailto:'+v : v; if(k!=='email'){a.target='_blank';a.rel='noopener';} }
+    else { a.addEventListener('click',function(e){e.preventDefault();}); a.title = document.documentElement.lang==='en' ? 'Coming soon' : 'Em breve'; }
+  });
+  function setLang(l){
+    document.documentElement.lang=l;
+    document.querySelectorAll('.lang button').forEach(function(b){b.setAttribute('aria-pressed', b.dataset.lang===l?'true':'false');});
+    try{localStorage.setItem('labferm-lang',l);}catch(e){}
+  }
+  document.querySelectorAll('.lang button').forEach(function(b){b.addEventListener('click',function(){setLang(b.dataset.lang);});});
+  try{var s=localStorage.getItem('labferm-lang'); if(s) setLang(s);}catch(e){}
+  var items=document.querySelectorAll('.pub'), cnt=document.getElementById('pubcount');
+  document.querySelectorAll('.filter').forEach(function(b){
+    b.addEventListener('click',function(){
+      document.querySelectorAll('.filter').forEach(function(x){x.classList.toggle('on',x===b);});
+      var f=b.dataset.f, n=0;
+      items.forEach(function(li){var show=f==='all'||li.dataset.members.split('|').indexOf(f)>-1; li.hidden=!show; if(show)n++;});
+      cnt.textContent=n;
+    });
+  });
+})();
+</script>
+</body>
+</html>
