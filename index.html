@@ -20,12 +20,13 @@ img,svg{display:block}
 .wrap{max-width:1160px;margin:0 auto;padding:0 24px}
 .skip{position:absolute;left:-999px} .skip:focus{left:16px;top:16px;background:#fff;padding:8px 12px;z-index:99}
 header.top{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-.bar{display:flex;align-items:center;gap:20px;min-height:68px;flex-wrap:wrap}
+.bar{display:flex;align-items:center;gap:14px;min-height:68px;flex-wrap:wrap}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}
 .brand svg{width:40px;height:40px}
 .word{font-size:24px;letter-spacing:-.3px;line-height:1} .word b{font-weight:600} .word span{font-weight:300}
 nav.menu{display:flex;gap:4px;flex-wrap:wrap;margin-left:auto}
-nav.menu a{text-decoration:none;color:var(--ink);font-size:15px;padding:10px 10px;border-radius:8px}
+nav.menu a{text-decoration:none;color:var(--ink);font-size:15px;padding:10px 8px;border-radius:8px}
+@media (max-width:1360px){.tools .social{display:none}}
 nav.menu a:hover{background:var(--paper)}
 .tools{display:flex;align-items:center;gap:10px}
 .lang{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
@@ -117,6 +118,19 @@ footer p{margin:6px 0;font-size:15px}
 @keyframes grow1{from{transform:scale(0);opacity:0}to{transform:scale(1);opacity:1}}
 @keyframes growloop{0%{transform:scale(0);opacity:0}5%{transform:scale(1.35);opacity:1}8%{transform:scale(1)}82%{transform:scale(1);opacity:1}92%,100%{transform:scale(0);opacity:0}}
 @media (prefers-reduced-motion:reduce){.colony circle{animation:none!important}}
+.opps{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.opp{display:grid;grid-template-columns:110px 130px minmax(0,1fr);gap:16px;align-items:baseline;padding:14px 4px;border-bottom:1px solid var(--line)}
+.opp .due{font-size:14px;font-weight:600;color:var(--ink);white-space:nowrap}
+.opp .due.soonish{color:#A33E26}
+.opp .org{font-size:13px;font-weight:600;color:var(--teal)}
+.opp a.t{font-weight:600;font-size:16px;line-height:1.35;text-decoration:none;color:var(--ink)}
+.opp a.t:hover{text-decoration:underline;color:var(--teal)}
+.opp .r{display:block;font-size:14px;color:var(--muted);margin-top:2px}
+@media (max-width:640px){.opp{grid-template-columns:auto minmax(0,1fr);gap:4px 12px} .opp .txt{grid-column:1/-1}}
+.soon{display:grid;grid-template-columns:200px minmax(0,1fr);gap:36px;align-items:center;border:1px dashed var(--line);border-radius:var(--radius);padding:32px}
+.soon-art{width:180px;height:180px;opacity:.35}
+.soon p{color:var(--muted);margin:12px 0 0;max-width:640px}
+@media (max-width:640px){.soon{grid-template-columns:1fr} .soon-art{width:120px;height:120px}}
 :focus-visible{outline:3px solid var(--honey);outline-offset:2px}
 @media (max-width:900px){
  .hero .wrap,.obra,.where{grid-template-columns:1fr}
@@ -145,6 +159,8 @@ footer p{margin:6px 0;font-size:15px}
 <a href="#equipe"><span class="pt">Equipe</span><span class="en">Team</span></a>
 <a href="#projetos"><span class="pt">Projetos</span><span class="en">Projects</span></a>
 <a href="#publicacoes"><span class="pt">Publicações</span><span class="en">Publications</span></a>
+<a href="#oportunidades"><span class="pt">Oportunidades</span><span class="en">Funding</span></a>
+<a href="#equipamentos"><span class="pt">Equipamentos</span><span class="en">Equipment</span></a>
 <a href="#obra"><span class="pt">A obra</span><span class="en">Construction</span></a>
 <a href="#onde"><span class="pt">Onde estamos</span><span class="en">Location</span></a>
 </nav>
@@ -385,6 +401,29 @@ footer p{margin:6px 0;font-size:15px}
 </div>
 </section>
 
+<section class="alt" id="oportunidades">
+<div class="wrap">
+<h2><span class="pt">Oportunidades de financiamento</span><span class="en">Funding opportunities</span></h2>
+<p class="intro"><span class="pt">Chamadas abertas para projetos e bolsas nas áreas do laboratório. Confira sempre o edital oficial antes de submeter.</span><span class="en">Open calls for projects and fellowships in the lab's areas. Always check the official call before applying.</span></p>
+<ul class="opps" id="opps"></ul>
+<p class="note" id="opps-upd"></p>
+</div>
+</section>
+
+<section id="equipamentos">
+<div class="wrap">
+<h2><span class="pt">Equipamentos</span><span class="en">Equipment</span></h2>
+<div class="soon">
+<svg class="soon-art" viewBox="0 0 200 200" aria-hidden="true"><circle cx="94.5" cy="105.0" r="5.54" fill="#E8735A"/><circle cx="100.9" cy="89.6" r="5.48" fill="#E8735A"/><circle cx="107.8" cy="110.2" r="5.42" fill="#E8735A"/><circle cx="85.4" cy="97.4" r="5.36" fill="#E8735A"/><circle cx="114.0" cy="91.1" r="5.30" fill="#E8735A"/><circle cx="95.3" cy="117.5" r="5.24" fill="#E8735A"/><circle cx="91.0" cy="82.6" r="5.18" fill="#E8735A"/><circle cx="119.7" cy="107.2" r="5.12" fill="#E8735A"/><circle cx="79.5" cy="108.5" r="5.06" fill="#E8735A"/><circle cx="109.9" cy="78.8" r="5.00" fill="#2F5D7E"/><circle cx="107.3" cy="123.4" r="4.94" fill="#2F5D7E"/><circle cx="77.8" cy="87.1" r="4.88" fill="#2F5D7E"/><circle cx="126.1" cy="94.3" r="4.82" fill="#2F5D7E"/><circle cx="84.1" cy="122.6" r="4.76" fill="#2F5D7E"/><circle cx="96.3" cy="71.6" r="4.70" fill="#2F5D7E"/><circle cx="122.6" cy="119.1" r="4.64" fill="#2F5D7E"/><circle cx="69.5" cy="101.3" r="4.58" fill="#2F5D7E"/><circle cx="122.3" cy="77.9" r="4.52" fill="#2F5D7E"/><circle cx="98.5" cy="132.2" r="4.46" fill="#2F5D7E"/><circle cx="78.8" cy="74.6" r="4.40" fill="#2F5D7E"/><circle cx="133.6" cy="104.5" r="4.34" fill="#2F5D7E"/><circle cx="71.5" cy="119.8" r="4.28" fill="#2F5D7E"/><circle cx="107.8" cy="65.4" r="4.22" fill="#2F5D7E"/><circle cx="118.0" cy="131.5" r="4.16" fill="#2F5D7E"/><circle cx="64.8" cy="88.8" r="4.10" fill="#2F5D7E"/><circle cx="134.3" cy="84.2" r="4.04" fill="#2F5D7E"/><circle cx="85.2" cy="135.5" r="3.98" fill="#2F5D7E"/><circle cx="86.8" cy="63.2" r="3.92" fill="#2F5D7E"/><circle cx="135.3" cy="118.5" r="3.86" fill="#2F5D7E"/><circle cx="60.8" cy="110.3" r="3.80" fill="#2F5D7E"/><circle cx="122.3" cy="65.3" r="3.74" fill="#2F5D7E"/><circle cx="107.1" cy="141.3" r="3.68" fill="#2F5D7E"/><circle cx="66.4" cy="74.0" r="3.62" fill="#2F5D7E"/><circle cx="143.0" cy="96.4" r="3.56" fill="#2F5D7E"/><circle cx="70.3" cy="132.1" r="3.50" fill="#2F5D7E"/><circle cx="100.2" cy="55.6" r="3.44" fill="#2F5D7E"/><circle cx="130.2" cy="133.3" r="3.38" fill="#2F5D7E"/><circle cx="54.6" cy="95.8" r="3.32" fill="#2F5D7E"/><circle cx="136.8" cy="72.1" r="3.26" fill="#2F5D7E"/><circle cx="91.6" cy="146.0" r="3.20" fill="#2F5D7E"/><circle cx="74.8" cy="59.9" r="3.14" fill="#2F5D7E"/><circle cx="146.2" cy="112.7" r="3.08" fill="#2F5D7E"/><circle cx="56.8" cy="122.1" r="3.02" fill="#2F5D7E"/><circle cx="117.1" cy="54.0" r="2.96" fill="#2F5D7E"/><circle cx="118.7" cy="146.0" r="2.90" fill="#2F5D7E"/><circle cx="54.7" cy="78.5" r="2.84" fill="#2F5D7E"/><circle cx="148.5" cy="85.1" r="2.78" fill="#2F5D7E"/><circle cx="74.1" cy="144.2" r="2.72" fill="#2F5D7E"/><circle cx="89.1" cy="49.4" r="2.66" fill="#2F5D7E"/><circle cx="142.7" cy="130.3" r="2.60" fill="#2F5D7E"/><circle cx="47.6" cy="106.5" r="2.54" fill="#2F5D7E"/><circle cx="134.6" cy="59.4" r="2.48" fill="#2F5D7E"/><circle cx="102.0" cy="153.8" r="2.42" fill="#2F5D7E"/><circle cx="61.8" cy="61.3" r="2.36" fill="#2F5D7E"/><circle cx="154.8" cy="102.8" r="2.30" fill="#2F5D7E"/><circle cx="57.3" cy="135.3" r="2.24" fill="#2F5D7E"/><circle cx="107.7" cy="44.7" r="2.18" fill="#2F5D7E"/><circle cx="131.9" cy="146.4" r="2.12" fill="#2F5D7E"/><circle cx="44.6" cy="87.2" r="2.06" fill="#2F5D7E"/><circle cx="149.9" cy="71.8" r="2.00" fill="#2F5D7E"/><circle cx="82.2" cy="155.0" r="1.94" fill="#2F5D7E"/><circle cx="75.8" cy="47.0" r="1.88" fill="#2F5D7E"/><circle cx="154.1" cy="123.0" r="1.82" fill="#2F5D7E"/><circle cx="44.2" cy="119.7" r="1.76" fill="#2F5D7E"/><circle cx="128.0" cy="47.3" r="1.70" fill="#2F5D7E"/><circle cx="115.0" cy="158.2" r="1.64" fill="#2F5D7E"/><circle cx="49.2" cy="67.0" r="1.58" fill="#2F5D7E"/><circle cx="160.2" cy="90.0" r="1.52" fill="#2F5D7E"/><circle cx="62.1" cy="148.4" r="1.46" fill="#2F5D7E"/></svg>
+<div>
+<span class="badge"><span class="pt">Em construção</span><span class="en">Coming soon</span></span>
+<p><span class="pt">A lista de equipamentos do LabFerm, com especificações, regras de uso e agendamento, será publicada aqui assim que o laboratório entrar em funcionamento.</span><span class="en">LabFerm's equipment list, with specifications, usage rules and booking, will be published here as soon as the lab opens.</span></p>
+<p><span class="pt">Quer usar a infraestrutura ou propor uma parceria? Escreva para</span><span class="en">Interested in using the facility or proposing a partnership? Write to</span> <a href="mailto:labfermufrj@gmail.com">labfermufrj@gmail.com</a>.</p>
+</div>
+</div>
+</div>
+</section>
+
 <section class="alt" id="obra">
 <div class="wrap obra">
 <div class="video"><video controls playsinline preload="metadata" poster="video/poster.jpg" aria-label="Vídeo da obra do LabFerm / LabFerm construction video"><source src="video/labferm_obra.mp4" type="video/mp4"></video></div>
@@ -447,6 +486,7 @@ footer p{margin:6px 0;font-size:15px}
 </div>
 </footer>
 
+<script src="oportunidades.js"></script>
 <script>
 // Preencha aqui os links quando as contas estiverem criadas
 var SOCIAL = {
@@ -467,6 +507,24 @@ var SOCIAL = {
   }
   document.querySelectorAll('.lang button').forEach(function(b){b.addEventListener('click',function(){setLang(b.dataset.lang);});});
   try{var s=localStorage.getItem('labferm-lang'); if(s) setLang(s);}catch(e){}
+
+  (function(){
+    var box=document.getElementById('opps'); if(!box) return;
+    var D=window.OPORTUNIDADES||{itens:[]};
+    var today=new Date(); today.setHours(0,0,0,0);
+    function fmt(iso){var p=iso.split('-');return p[2]+'/'+p[1]+'/'+p[0];}
+    function esc(t){return String(t).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+    var its=(D.itens||[]).filter(function(i){return new Date(i.prazo+'T23:59:59')>=today;}).sort(function(a,b){return a.prazo<b.prazo?-1:1;});
+    if(!its.length){box.innerHTML='<li class="opp"><span class="txt"><span class="pt">Nenhuma chamada aberta no momento.</span><span class="en">No open calls at the moment.</span></span></li>';}
+    else box.innerHTML=its.map(function(i){
+      var days=(new Date(i.prazo+'T00:00:00')-today)/864e5;
+      return '<li class="opp"><span class="due'+(days<=10?' soonish':'')+'">'+fmt(i.prazo)+'</span><span class="org">'+esc(i.orgao)+'</span>'+
+        '<span class="txt"><a class="t" href="'+esc(i.link)+'" target="_blank" rel="noopener"><span class="pt">'+esc(i.titulo)+'</span><span class="en">'+esc(i.tituloEn||i.titulo)+'</span> ↗</a>'+
+        '<span class="r"><span class="pt">'+esc(i.resumo)+'</span><span class="en">'+esc(i.resumoEn||i.resumo)+'</span></span></span></li>';
+    }).join('');
+    var u=document.getElementById('opps-upd');
+    if(u&&D.atualizadoEm) u.innerHTML='<span class="pt">Lista atualizada em '+fmt(D.atualizadoEm)+'. Chamadas com prazo vencido saem automaticamente.</span><span class="en">List updated on '+fmt(D.atualizadoEm)+'. Expired calls are removed automatically.</span>';
+  })();
   var items=document.querySelectorAll('.pub'), cnt=document.getElementById('pubcount');
   document.querySelectorAll('.filter').forEach(function(b){
     b.addEventListener('click',function(){
